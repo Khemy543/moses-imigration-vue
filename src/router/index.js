@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
+      path: "/immigration-categories",
+      name: "immigration-categories",
+      component: () => import("../views/ImmigrationCategory.vue"),
+    },
+    {
       path: "/free-assessment-form",
       name: "free-assessment-form",
       component: () => import("../views/FreeAssessmentForm.vue"),

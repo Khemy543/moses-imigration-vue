@@ -48,54 +48,29 @@ const megaLinks = ref([
   },
   {
     id: 3,
-    name: "Economy Class",
-    link: "/economy-class",
+    name: "Immigration Categories",
+    link: "/immigration-categories",
     show: false,
     submenu: [
-      {
+    {
         id: 1,
-        name: "Skilled workers",
-        link: "/skilled-workers",
+        name: "Family Class",
+        link: "/family-class",
       },
       {
         id: 2,
-        name: "CEC",
-        link: "/cec",
+        name: "Economy Class",
+        link: "/economy-class",
       },
       {
         id: 3,
-        name: "Fedral skilled trained program",
-        link: "/fedral-skilled-trained-program",
+        name: "Refugee Class",
+        link: "/refugee-class",
       },
       {
         id: 4,
-        name: "provincial nominee",
-        link: "/provincial-nominee",
-      },
-      {
-        id: 5,
-        name: "Business programs",
-        link: "/business-programs",
-      },
-      {
-        id: 6,
-        name: "PNP business programs",
-        link: "/pnp-business-programs",
-      },
-      {
-        id: 7,
-        name: "Caregiver Canada",
-        link: "/caregiver-canada",
-      },
-      {
-        id: 8,
-        name: "Family Visas",
-        link: "/family-visas",
-      },
-      {
-        id: 9,
-        name: "Visitors Visa",
-        link: "/visitors-visa",
+        name: "Temporary Residence Class",
+        link: "/temporary-residence-class",
       },
     ],
   },
