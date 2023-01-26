@@ -1,6 +1,15 @@
 <script setup>
 import { ref } from "vue";
 
+const inlineBgImage = (src) => {
+  // eslint-disable-next-line no-undef
+  const bgImage = require("@/assets" + src);
+
+  return {
+    backgroundImage: `url("${bgImage}")`,
+  };
+};
+
 const categories = ref([
   {
     id: 1,
@@ -38,13 +47,7 @@ const openCollapse = (index) => {
 </script>
 
 <template>
-  <section
-    class="p-0 cover-background overlap-height"
-    style="
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url(@/assets/images/main/flag.jpg) no-repeat;
-    "
-  >
+  <section class="p-0 cover-background overlap-height hero-image">
     <div class="opacity-very-light bg-dark-slate-blue"></div>
     <div class="container position-relative">
       <div class="row full-screen md-h-800px sm-h-500px">
@@ -66,7 +69,7 @@ const openCollapse = (index) => {
           </div>
 
           <img
-            src="./assets/images/main/client.jpeg"
+            src="../assets/images/main/client.jpeg"
             alt=""
             style="margin-top: 20px"
           />
@@ -100,12 +103,7 @@ const openCollapse = (index) => {
       </div>
     </div>
   </section>
-  <section
-    class="home-consulting big-section cover-background"
-    style="
-      background-image: url('../assets/images/home-consulting-about-bg.jpg');
-    "
-  >
+  <section class="home-consulting big-section cover-background">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div
@@ -172,57 +170,6 @@ const openCollapse = (index) => {
       <div
         class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center"
       >
-        <!-- start team member -->
-        <div
-          class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
-          data-wow-delay="0.2s"
-        >
-          <figure>
-            <div class="team-member-image">
-              <img
-                alt="About team 16"
-                src="https://via.placeholder.com/375x460"
-              />
-              <div
-                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"
-              ></div>
-            </div>
-            <figcaption
-              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"
-            >
-              <span class="team-title d-block alt-font text-white"
-                >Alexander Harvard</span
-              >
-              <span
-                class="team-sub-title text-small d-block text-white-transparent text-uppercase"
-                >Generalist consultant</span
-              >
-              <div
-                class="social-icon w-100 position-absolute bottom-30px left-0px"
-              >
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://twitter.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-twitter"></i
-                ></a>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-        <!-- end team member -->
         <!-- start team member -->
         <div
           class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
@@ -510,11 +457,9 @@ const openCollapse = (index) => {
         <div
           class="col-12 col-lg-7 col-sm-8 text-center margin-6-rem-bottom md-margin-3-rem-bottom wow animate__fadeIn"
         >
-          <span class="d-block margin-15px-bottom"
-            ><i
-              class="line-icon-Business-ManWoman icon-large opacity-4-half"
-            ></i
-          ></span>
+          <span class="d-block margin-15px-bottom">
+            <vue-feather type="users" stroke="#bf8c4c" size="40"></vue-feather>
+          </span>
           <div
             class="alt-font title-large text-gradient-tussock-greenish-slate font-weight-700 text-uppercase letter-spacing-minus-7px xl-letter-spacing-minus-4px"
           >
@@ -529,3 +474,13 @@ const openCollapse = (index) => {
     </div>
   </section>
 </template>
+<style scoped>
+.hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../assets/images/main/flag.jpg) no-repeat;
+}
+
+.home-consulting {
+  background-image: url(../assets/images/home-consulting-about-bg.jpg);
+}
+</style>

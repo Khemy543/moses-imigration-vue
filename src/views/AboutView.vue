@@ -1,9 +1,5 @@
 <template>
-  <section
-    class="parallax"
-    data-parallax-background-ratio="0.5"
-    style="background-image: url('../assets/images/main/flag.jpg')"
-  >
+  <section class="parallax about-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
     <div class="container">
       <div class="row align-items-stretch justify-content-center small-screen">
@@ -131,5 +127,9 @@
     display: flex;
     align-items: center;
   }
+}
+
+.about-header {
+  background-image: url(../assets/images/main/flag.jpg);
 }
 </style>

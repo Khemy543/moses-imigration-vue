@@ -1,10 +1,9 @@
-<script setup lang="ts">
-import { onMounted } from "vue";
-import { RouterLink, RouterView } from "vue-router";
+<script setup>
+import { RouterView } from "vue-router";
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 
-onMounted(() => {
+/* onMounted(() => {
   let jquery = document.createElement("script");
   let themeVendors = document.createElement("script");
   let mainjs = document.createElement("script");
@@ -14,7 +13,7 @@ onMounted(() => {
   document.head.appendChild(jquery);
   document.head.appendChild(themeVendors);
   document.head.appendChild(mainjs);
-});
+}); */
 </script>
 
 <template>
