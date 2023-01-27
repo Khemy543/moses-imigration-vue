@@ -88,6 +88,24 @@ const megaLinks = ref([
     ],
   },
   {
+    id: 3,
+    name: "Permit",
+    link: "/permit",
+    show: false,
+    submenu: [
+      {
+        id: 1,
+        name: "Study Permit",
+        link: "/study-permit",
+      },
+      {
+        id: 2,
+        name: "Work Permit",
+        link: "/work-permit",
+      },
+    ],
+  },
+  {
     id: 8,
     name: "Free Assessment Form",
     link: "/free-assessment-form",
