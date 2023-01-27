@@ -52,10 +52,10 @@ const megaLinks = ref([
     link: "/immigration-categories",
     show: false,
     submenu: [
-    {
+      {
         id: 1,
         name: "Family Class",
-        link: "/family-class",
+        link: "/family-class-sponsorship",
       },
       {
         id: 2,
@@ -80,7 +80,7 @@ const megaLinks = ref([
     link: "/sponsorship",
     show: false,
     submenu: [
-    {
+      {
         id: 1,
         name: "Family Class",
         link: "/family-class-sponorship",

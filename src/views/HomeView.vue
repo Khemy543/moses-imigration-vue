@@ -1,15 +1,6 @@
 <script setup>
 import { ref } from "vue";
 
-const inlineBgImage = (src) => {
-  // eslint-disable-next-line no-undef
-  const bgImage = require("@/assets" + src);
-
-  return {
-    backgroundImage: `url("${bgImage}")`,
-  };
-};
-
 const categories = ref([
   {
     id: 1,
