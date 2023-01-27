@@ -34,6 +34,11 @@ const router = createRouter({
       name: "family-class-sponsorship",
       component: () => import("../views/FamilyClassSponsorship.vue"),
     },
+    {
+      path: "/study-permit",
+      name: "study-permit",
+      component: () => import("../views/StudyPermit.vue"),
+    },
   ],
 });
 
