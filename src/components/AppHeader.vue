@@ -55,7 +55,7 @@ const megaLinks = ref([
       {
         id: 1,
         name: "Family Class",
-        link: "/family-class-sponsorship",
+        link: "/family-class-immigration",
       },
       {
         id: 2,
@@ -83,7 +83,7 @@ const megaLinks = ref([
       {
         id: 1,
         name: "Family Class",
-        link: "/family-class-sponorship",
+        link: "/family-class-sponsorship",
       },
     ],
   },

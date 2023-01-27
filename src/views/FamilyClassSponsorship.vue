@@ -44,11 +44,11 @@
                 We believe people deserve to earn a living doing what they love
                 - full width post
               </h5>
-              <img
+              <!-- <img
                 src="https://via.placeholder.com/780x500"
                 alt=""
                 class="w-100 border-radius-6px margin-4-half-rem-bottom"
-              />
+              /> -->
               <p>
                 The main intent of the Canadian family class immigration program
                 is to reunite Canadian citizens and permanent residents with
