@@ -29,6 +29,11 @@ const router = createRouter({
       name: "contact-us",
       component: () => import("../views/ContactUs.vue"),
     },
+    {
+      path: "/family-class-sponsorship",
+      name: "family-class-sponsorship",
+      component: () => import("../views/FamilyClassSponsorship.vue"),
+    },
   ],
 });
 

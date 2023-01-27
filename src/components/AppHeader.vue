@@ -75,6 +75,19 @@ const megaLinks = ref([
     ],
   },
   {
+    id: 3,
+    name: "Sponsorship",
+    link: "/sponsorship",
+    show: false,
+    submenu: [
+    {
+        id: 1,
+        name: "Family Class",
+        link: "/family-class-sponorship",
+      },
+    ],
+  },
+  {
     id: 8,
     name: "Free Assessment Form",
     link: "/free-assessment-form",
