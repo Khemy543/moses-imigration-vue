@@ -18,22 +18,22 @@ const megaLinks = ref([
         id: 1,
         name: "Why imigration consultant",
         link: "/why-imigration-consiltant",
-      },
+      } /* 
       {
         id: 2,
         name: "Facts",
         link: "/fact",
-      },
+      }, */,
       {
         id: 3,
         name: "Google Reviews",
         link: "/google-reviews",
-      },
+      } /* 
       {
         id: 4,
         name: "Marketing",
         link: "/marketing",
-      },
+      }, */,
       {
         id: 5,
         name: "Privacy policy",
@@ -176,7 +176,7 @@ const mouseleave = (index) => {
               class="default-logo"
               alt=""
             />
-            <img
+            <!--  <img
               src="../assets/images/main/logo.png"
               data-at2x="images/main/logo.png"
               class="alt-logo"
@@ -187,7 +187,7 @@ const mouseleave = (index) => {
               data-at2x="images/main/logo.png"
               class="mobile-logo"
               alt=""
-            />
+            /> -->
           </RouterLink>
         </div>
         <div class="col-auto menu-order px-lg-0">

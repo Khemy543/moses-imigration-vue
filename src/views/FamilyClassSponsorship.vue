@@ -209,10 +209,10 @@
                 Then, you will have to meet or exceed the Low Income Cut-off
                 (LICO) –
                 <a
-                  style="color: #0038e3"
                   href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5482-instruction-fill-financial-evaluation-form-1283.html"
                   target="_blank"
-                  >click here</a
+                  class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom"
+                  >Click here</a
                 >
                 to see LICO table.
               </p>
@@ -280,9 +280,13 @@
                 You would like to find out if you are eligible for sponsoring
                 your spouse, common-law partner or conjugal partner? Please
                 contact us by
-                <RouterLink style="color: #0038e3" to="/free-assessment-form"
+
+                <RouterLink
+                  to="/free-assessment-form"
+                  class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom"
                   >clicking here</RouterLink
                 >
+
                 and find out if you are eligible under the Family Sponsorship
                 Program
               </p>
