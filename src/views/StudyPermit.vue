@@ -33,124 +33,130 @@
         <div class="row justify-content-center">
             <div class="col-12 col-xl-10 col-lg-10 col-md-10">
                 <p>
-                    Students who wish to pursue education in Canada shall be admitted by a Designated Learning Institution (DLI). Click here (please make a link to this site)
-                        (<b><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html">https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html</a></b>) to learn more about DLI. Most
-                        foreign nationals who come to Canada for study do need a study permit.
+                  Students who wish to pursue an education in Canada will be admitted by a Designated Learning Institution (DLI). Most Foreign Nationals will also require a study permit. To learn more about DLI’s,
+                      <a
+                          href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html"
+                          class="btn btn-fancy btn-small btn-dark-gray margin-35px-right xs-margin-10px-bottom"
+                      >Click here
+                      </a>
                 </p>
+              <h5 class="text-center">DLI Eligibility Criteria</h5>
                 <p>
-                    DLIs may have different requirements and standards of their own. However, some of the common requirements for admission may include the following:
-
+                  DLI’s have their own specific admission criteria and standards. However, some common requirements may include the following:
                     <ol>
                         <li>
                             <div>
-                                <b>Language Requirement</b>: 
-                                Depending on the medium of instruction of each DLI, you may be required to proof you language proficiency skills in either English or French.
-                                These are also the two official languages of Canada. Language proficiency skills maybe proven by language test certificate such as International English Language Testing
-                                System (IELTS), Teaching of English as a foreign Language (TOEFL), The Canadian English Language Proficiency Index Program (CELPIP), Test d’évaluation de français(TEF) or Test de connaissance du français. Therefore, it is very important to check the
-                                language requirements of the LDI from which you wish to get admission.
+                                <b>Language Requirement</b>:
+                              The two official languages of Canada are English and French. You may be required to demonstrate language proficiency skills in either language.
+                              Proficiency skills may be proven by testing through certification programs, such as: International English Language Testing System (IELTS); Teaching of English as a
+                              foreign Language (TOEFL); The Canadian English Language Proficiency Index Program (CELPIP); Test d’évaluation de Français (TEF); or, Test de Connaissance du
+                              Français (TCF). You must confirm the language requirements of the DLI you wish to attend
                             </div>
                         </li>
                         <li>
                             <div>
-                                <b>Application Deadlines</b>: 
-                                Some of the DLIs may have strict application deadlines for foreign and/or domestic students. Therefore, depending on which program of a DLI youintend to apply, you must be sure you meet deadlines for admission application.
+                                <b>Application Deadlines</b>:
+                              Some DLI’s may have strict application deadlines for foreign and/or domestic students. You must meet any admission application deadlines
                             </div>
                         </li>
                         <li>
                             <div>
-                                <b>Entrance Exams</b>: 
-                                Some DLIs may have entrance exams in your intended field of study. Therefore, you must be sure whether you have to write an entrance exam or not before you apply for admission.
+                                <b>Entrance Exams</b>:
+                              Some DLIs may have entrance exams for your intended field of study. You must confirm if any entrance exams are required prior to submitting your admission application
                             </div>
                         </li>
                     </ol>
-                </p>     
-                <div>
-                    <h5 class="text-center">Major Eligibility Criteria for Study Permit</h5>
+                </p>
+              <div>
+                <h5 class="text-center">Major Eligibility Criteria for Study Permit</h5>
 
-                    <p>
-                        To apply for a study permit, you need to meet the eligibility requirements. The following are the most important requirements
+                <p>
+                  You must meet all eligibility requirements to apply for a study permit. The following are the most important requirements:
+                <ol>
+                  <li>
+                    You must be enrolled at a Designated Learning Institution (DLI) in Canada;
+                  </li>
+                  <li>
+                    You have to prove that you have enough funds to cover all your costs. Your financial capability must prove that you are able to pay for: <br>
+                    <ul class="ml-2">
+                      <li>Tuition fee for your courses of study;</li>
+                      <li>Living expenses for yourself (and your accompanying family members – if applicable); and</li>
+                      <li>Return transportation for yourself (and your accompanying family members – if applicable)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    You must obey the law, have no criminal record and get a police clearance certificate (if required);
+                  </li>
+                  <li>
+                    Must be in good health and get a medical exam (if required); and
+                  </li>
+                  <li>
+                    Must prove to an officer dealing with your case that you will leave Canada when your study permit expires
+                  </li>
+                </ol>
+                </p>
+              </div>
+              <div>
+                <h5 class="text-center">Minimum Required Funds</h5>
 
-                        <ol>
-                            <li>
-                                You must be enrolled at a Designated Learning Institution (DLI) in Canada;
-                            </li>
-                            <li>
-                                You have to prove that you have enough funds to cover all your costs. Your financial capability must prove that you are able to pay for: <br>
-                                <ul class="ml-2">
-                                    <li>Tuition fee for your courses of study;</li>
-                                    <li>Living expenses for yourself (and your accompanying family members – if applicable); and</li>
-                                    <li>Return transportation for yourself (and your accompanying family members – if applicable)</li>
-                                </ul>
-                            </li>
-                            <li>
-                                You must obey the law, have no criminal record and get a police clearance certificate (if required);
-                            </li>
-                            <li>
-                                Must be in good health and get a medical exam (if required); and
-                            </li>
-                            <li>
-                                Must prove to an officer dealing with your case that you will leave Canada when your study permit expires
-                            </li>
-                        </ol>
-                    </p>
-                </div> 
-                <div>
-                    <h5 class="text-center">Minimum Required Funds</h5>
+                <p>
+                  The following table is adopted from the IRCC website and it shows the minimum funds needed to support yourself as a student (and family members who come with you):
 
-                    <p>
-                        The following table is adopted from the IRCC website and it shows the minimum funds needed to support yourself as a student (and family members who come with you):
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Persons Coming To Canada</th>
+                    <th>Amount of funds required per year (doesn’t include tuition)</th>
+                    <th>Amount of funds required per month (additional to the tuition)</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>You (the student)</td>
+                    <td>CDN$10,000</td>
+                    <td>CDN$833</td>
+                  </tr>
+                  <tr>
+                    <td>First family member</td>
+                    <td>CDN$4,000</td>
+                    <td>CDN$333</td>
+                  </tr>
+                  <tr>
+                    <td>Every additional accompanying family member</td>
+                    <td>CDN$3,000</td>
+                    <td>CDN$255</td>
+                  </tr>
+                  </tbody>
+                </table>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Persons Coming To Canada</th>
-                                    <th>Amount of funds required per year (doesn’t include tuition)</th>
-                                    <th>Amount of funds required per month (additional to the tuition)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>You (the student)</td>
-                                    <td>CAN$10,000</td>
-                                    <td>CAN$833</td>
-                                </tr>
-                                <tr>
-                                    <td>First family member</td>
-                                    <td>CAN$4,000</td>
-                                    <td>CAN$333</td>
-                                </tr>
-                                <tr>
-                                    <td>Every additional accompanying family member</td>
-                                    <td>CAN$3,000</td>
-                                    <td>CAN$255</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <p>
+                  <i>Example</i>
+                  You and 2 family members come to a Province (Outside Quebec). The amount of funds you will require per year, not including tuition costs, are:
 
-                        <p>
-                            <i>Example</i>
-                            If you and 2 family members want to come to a province (other than Quebec) for a year, you will need
+                <ul class="md-">
+                  <li>
+                    Living expenses: CDN $10,000 (for the student)
+                  </li>
+                  <li>
+                    Living expenses: CDN $4,000 (for the first family member)
+                  </li>
+                  <li>
+                    Living expenses: CDN $3,000 (for the second family member)
+                  </li>
+                </ul>
 
-                            <ul class="md-">
-                                <li>
-                                    Living expenses: $10,000 (for the student)
-                                </li>
-                                <li>
-                                    Living expenses: $4,000 (for the first family member)
-                                </li>
-                                <li>
-                                    Living expenses: $3,000 (for the second family member)
-                                </li>
-                            </ul>
-                            
-                            <b>Apply for a Study Permit</b><br>
-                            Once you get you letter of admission from DLI, and that you have secured all funds needed for your tuition fees and living expenses, then you can apply for study permit. You need to make sure that all required documents are attached along with your application. <br><br>
+                <b>Study Permit</b><br>
+                Once you receive your letter of admission from your selected DLI, and you have secured all funds required for your tuition fees and living expenses, you can then apply for a study permit. You must provide all required documents with your application. <br><br>
 
-
-                            Contact us for assessment and assistance with your study permit (please put ink to our assessment form)
-                        </p>
-                    </p>
-                </div>   
+                <b>Moses Canadian Immigration Consulting Services</b><br>
+                can assist you in determining your eligibility of immigration to Canada through this program and with your study permit application.
+                <a
+                    href="/free-assessment-form"
+                    class="btn btn-fancy btn-small btn-dark-gray margin-35px-right xs-margin-10px-bottom"
+                >Click</a> to access the assessment form. Please contact us if you have any questions or require more information.
+                </p>
+                </p>
+              </div>
             </div>
         </div>
       </div>

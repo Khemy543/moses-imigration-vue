@@ -75,21 +75,28 @@ const openCollapse = (index) => {
           class="col-12 col-sm-9 align-items-center d-flex bg-tussock h-100 padding-3-rem-tb padding-5-rem-lr xs-padding-3-rem-lr"
         >
           <h5 class="alt-font text-white font-weight-300 m-0">
-            Book a free appointment for
-            <span class="font-weight-600">Canadian Dream</span>
+            Book a free appointment for your dream of living in
+            <span class="font-weight-600">Canadian Permanently</span>
           </h5>
         </div>
         <div class="col-3 p-0 h-100 d-none d-xl-inline-block">
-          <a
-            href="contact-us-classic.html"
-            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"
-          >
-            <vue-feather
-              type="arrow-right"
-              stroke="#bf8c4c"
-              size="40"
+          <RouterLink to="/free-assessment-form" class="text-center align-items-center d-flex justify-content-center bg-seashell h-100">
+              <vue-feather
+                type="arrow-right"
+                stroke="#bf8c4c"
+                size="40"
             ></vue-feather>
-          </a>
+          </RouterLink>
+<!--          <a-->
+<!--            href="contact-us-classic.html"-->
+<!--            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"-->
+<!--          >-->
+<!--            <vue-feather-->
+<!--              type="arrow-right"-->
+<!--              stroke="#bf8c4c"-->
+<!--              size="40"-->
+<!--            ></vue-feather>-->
+<!--          </a>-->
         </div>
       </div>
     </div>
