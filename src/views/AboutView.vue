@@ -87,6 +87,40 @@
     </div>
   </section>
   <!-- end section -->
+
+  <!-- start section -->
+  <section class="p-0 bg-extra-dark-gray wow animate__fadeIn">
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="col-12 col-lg-6 cover-background md-h-550px sm-h-400px xs-h-300px wow animate__fadeInLeft"
+          data-wow-delay="0.2s"
+          style="
+            background-image: url('https://via.placeholder.com/1021x682');
+            height: auto;
+          "
+        ></div>
+        <div
+          class="col-12 col-lg-6 padding-8-half-rem-tb padding-10-half-rem-lr xl-padding-7-half-rem-all lg-padding-4-half-rem-all md-padding-5-half-rem-all xs-padding-5-rem-lr wow animate__fadeIn"
+          data-wow-delay="0.6s"
+        >
+          <h4
+            class="alt-font font-weight-600 text-white letter-spacing-minus-1px w-65 margin-2-half-rem-bottom xl-w-100"
+          >
+            Who is RCIC?
+          </h4>
+          <p class="w-60 xl-w-100" style="color: white">
+            Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod
+            tempor incididunt ut labore dolore magna utenim minim veniam nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section -->
+
   <!-- start section -->
   <section class="wow animate__fadeIn">
     <div class="container">
