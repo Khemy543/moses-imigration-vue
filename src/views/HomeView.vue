@@ -48,7 +48,7 @@ const openCollapse = (index) => {
           <h2
             class="alt-font text-white line-height-65px font-weight-500 letter-spacing-minus-1px margin-65px-bottom sm-line-height-50px sm-margin-25px-bottom"
           >
-            We provide reliable business consulting help
+            We provide services related to different categories of Canadian Immigration
           </h2>
           <div
             class="alt-font text-medium font-weight-500 text-uppercase letter-spacing-2px d-flex"

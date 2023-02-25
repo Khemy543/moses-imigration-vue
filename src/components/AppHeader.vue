@@ -140,7 +140,7 @@ const mouseleave = (index) => {
           class="col-12 text-center text-sm-start col-sm-auto me-auto ps-lg-0"
         >
           <p class="text-medium m-0">
-            Good business consulting!
+            Looking
             <a
               href="contact-us-simple.html"
               class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline"
