@@ -100,7 +100,7 @@ const megaLinks = ref([
       },
       {
         id: 2,
-        name: "Work Permit",
+        name: "Work Permit (LMIA)",
         link: "/work-permit",
       },
     ],
