@@ -55,6 +55,11 @@ const router = createRouter({
       component: () => import("../views/LMIA.vue"),
     },
     {
+      path: "/lmia-exempt",
+      name: "lmia-exempt",
+      component: () => import("../views/LMIAExempt.vue"),
+    },
+    {
       path: "/atlantic-immigration-pilot",
       name: "atlantic-immigration-pilot",
       component: () => import("../views/AtlanticImmigration.vue"),
