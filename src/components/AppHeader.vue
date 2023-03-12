@@ -52,7 +52,7 @@ const megaLinks = ref([
     link: "/immigration-categories",
     show: false,
     submenu: [
-      {
+      /* {
         id: 2,
         name: "Economy Class",
         link: "/economy-class",
@@ -66,7 +66,7 @@ const megaLinks = ref([
         id: 4,
         name: "Temporary Residence Class",
         link: "/temporary-residence-class",
-      },
+      }, */
     ],
   },
   {
@@ -146,12 +146,17 @@ const mouseleave = (index) => {
         >
           <p class="text-medium m-0">
             Looking for more info, and would like to contact us?
-<!--            <a-->
-<!--              href="contact-us-simple.html"-->
-<!--              class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline"-->
-<!--              ><b>click here</b></a-->
-<!--            >-->
-            <RouterLink to="/free-assessment-form" class="navbar-brand"><b class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline">Click here</b></RouterLink>
+            <!--            <a-->
+            <!--              href="contact-us-simple.html"-->
+            <!--              class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline"-->
+            <!--              ><b>click here</b></a-->
+            <!--            >-->
+            <RouterLink to="/free-assessment-form" class="navbar-brand"
+              ><b
+                class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline"
+                >Click here</b
+              ></RouterLink
+            >
           </p>
         </div>
         <div class="col-auto d-none d-sm-block text-end px-lg-0 font-size-0">
@@ -164,7 +169,7 @@ const mouseleave = (index) => {
               class="top-bar-contact-list d-none d-md-inline-block no-border-right pe-0"
             >
               <vue-feather type="map-pin" size="16"></vue-feather>
-              532 Sargent Ave., Winnipeg, Manitoba,  R3B 1W2
+              532 Sargent Ave., Winnipeg, Manitoba, R3B 1W2
             </span>
           </div>
         </div>
