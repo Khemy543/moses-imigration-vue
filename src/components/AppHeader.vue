@@ -1,5 +1,96 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+onMounted(() => {
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    var scrollPas = window.scrollY;
+    var navHeight = 109;
+    var minHeaderHeight = 49;
+    var headerHeight = navHeight + minHeaderHeight;
+    var lastScroll = 0;
+    var st = scrollPas;
+
+    if (!header.classList.contains("no-sticky")) {
+      if (scrollPas >= headerHeight) {
+        document.querySelector(".header-with-topbar").classList.add("sticky");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-49");
+
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-49");
+
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.add("top--49");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.add("top-0");
+      } else if (scrollPas <= headerHeight) {
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-49");
+
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-49");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.add("top-0");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.add("top-49");
+      }
+    }
+
+    if (st > lastScroll) {
+      st = st - 1;
+      document
+        .querySelector(".header-with-topbar")
+        .classList.remove("header-appear");
+    } else {
+      document
+        .querySelector(".header-with-topbar")
+        .classList.add("header-appear");
+    }
+
+    if (lastScroll <= navHeight) {
+      document
+        .querySelector(".header-with-topbar")
+        .classList.remove("header-appear");
+    }
+
+    if (scrollPas <= 0) {
+      document.querySelector(".header-with-topbar").classList.remove("sticky");
+    }
+  });
+});
 
 const megaLinks = ref([
   {
@@ -164,7 +255,7 @@ const mouseleave = (index) => {
 </script>
 
 <template>
-  <header class="header-with-topbar">
+  <header class="header-with-topbar" id="header">
     <div
       class="navbar top-bar bg-white border-bottom border-color-black-transparent navbar-boxed d-none d-md-inline-block"
     >
@@ -174,11 +265,6 @@ const mouseleave = (index) => {
         >
           <p class="text-medium m-0">
             Looking for more info, and would like to contact us?
-            <!--            <a-->
-            <!--              href="contact-us-simple.html"-->
-            <!--              class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline"-->
-            <!--              ><b>click here</b></a-->
-            <!--            >-->
             <RouterLink to="/free-assessment-form" class="navbar-brand"
               ><b
                 class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-underline"
@@ -214,6 +300,7 @@ const mouseleave = (index) => {
               data-at2x="images/main/logo.png"
               class="default-logo"
               alt=""
+              style="max-height: 100px"
             />
             <!--  <img
               src="../assets/images/main/logo.png"
@@ -350,3 +437,16 @@ const mouseleave = (index) => {
     </nav>
   </header>
 </template>
+<style lang="css" scoped>
+.top-0 {
+  top: 0px !important;
+}
+
+.top--49 {
+  top: -49px !important;
+}
+
+.top-49 {
+  top: 49px !important;
+}
+</style>
