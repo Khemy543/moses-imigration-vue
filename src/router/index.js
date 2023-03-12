@@ -55,6 +55,11 @@ const router = createRouter({
       component: () => import("../views/LMIA.vue"),
     },
     {
+      path: "/atlantic-immigration-pilot",
+      name: "atlantic-immigration-pilot",
+      component: () => import("../views/AtlanticImmigration.vue"),
+    },
+    {
       path: "/economy-class",
       name: "economy-class",
       component: () => import("../views/ExpressEntry.vue"),
