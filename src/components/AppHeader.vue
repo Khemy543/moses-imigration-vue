@@ -134,7 +134,7 @@ const megaLinks = ref([
       {
         id: 5,
         name: "LMIA Global Talent Stream",
-        link: "/lmia-global-global-talent-stream",
+        link: "/lmia-global-talent-stream",
       },
     ],
   },

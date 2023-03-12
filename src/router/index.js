@@ -65,6 +65,11 @@ const router = createRouter({
       component: () => import("../views/AtlanticImmigration.vue"),
     },
     {
+      path: "/lmia-global-talent-stream",
+      name: "lmia-global-talent-stream",
+      component: () => import("../views/LMIAGlobal.vue"),
+    },
+    {
       path: "/rural-and-northern-immigration-pilot",
       name: "rural-and-northern-immigration-pilot",
       component: () => import("../views/RuralImmigration.vue"),
