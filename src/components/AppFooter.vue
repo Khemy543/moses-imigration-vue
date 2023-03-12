@@ -9,31 +9,37 @@
         <div class="row">
           <!-- start footer column -->
           <div
-            class="col-12 col-lg-3 col-sm-6 order-sm-1 order-lg-0 last-paragraph-no-margin md-margin-40px-bottom xs-margin-25px-bottom"
+            class="col-12 col-lg-4 col-sm-6 order-sm-1 order-lg-0 last-paragraph-no-margin md-margin-40px-bottom xs-margin-25px-bottom"
           >
             <span
               class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom"
               >About company</span
             >
             <p>
-              Lorem ipsum dolor amet consectetur adipiscing elit do eiusmod
-              tempor incididunt ut labore et dolore enim ad minim nostrud.
+              MCICS is a CICC registered Canadian immigration consulting firm
+              based in Winnipeg, Manitoba, Canada
             </p>
           </div>
           <!-- end footer column -->
           <!-- start footer column -->
           <div
-            class="col-12 col-lg-2 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom"
+            class="col-12 col-lg-4 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom"
           >
             <span
               class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom"
               >Company</span
             >
             <ul>
-              <li><a href="about-us.html">About company</a></li>
-              <li><a href="our-services.html">Company services</a></li>
-              <li><a href="our-team.html">Job opportunities</a></li>
-              <li><a href="contact-us-classic.html">Contact us</a></li>
+              <li><router-link to="about-us">About company</router-link></li>
+              <li>
+                <router-link to="our-services">Company services</router-link>
+              </li>
+              <li>
+                <router-link to="our-team">Job opportunities</router-link>
+              </li>
+              <li>
+                <router-link to="contact-us-classic">Contact us</router-link>
+              </li>
             </ul>
           </div>
           <!-- end footer column -->
@@ -54,7 +60,7 @@
           </div>
           <!-- end footer column -->
           <!-- start footer column -->
-          <div
+          <!-- <div
             class="col-12 col-xl-3 offset-xl-1 col-lg-4 col-sm-6 order-sm-3 order-lg-0"
           >
             <span
@@ -84,7 +90,7 @@
                 ></div>
               </div>
             </form>
-          </div>
+          </div> -->
           <!-- end footer column -->
         </div>
       </div>

@@ -48,7 +48,8 @@ const openCollapse = (index) => {
           <h2
             class="alt-font text-white line-height-65px font-weight-500 letter-spacing-minus-1px margin-65px-bottom sm-line-height-50px sm-margin-25px-bottom"
           >
-            We provide services related to different categories of Canadian Immigration
+            We provide services related to different categories of Canadian
+            Immigration
           </h2>
           <div
             class="alt-font text-medium font-weight-500 text-uppercase letter-spacing-2px d-flex"
@@ -80,23 +81,26 @@ const openCollapse = (index) => {
           </h5>
         </div>
         <div class="col-3 p-0 h-100 d-none d-xl-inline-block">
-          <RouterLink to="/free-assessment-form" class="text-center align-items-center d-flex justify-content-center bg-seashell h-100">
-              <vue-feather
-                type="arrow-right"
-                stroke="#bf8c4c"
-                size="40"
+          <RouterLink
+            to="/free-assessment-form"
+            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"
+          >
+            <vue-feather
+              type="arrow-right"
+              stroke="#bf8c4c"
+              size="40"
             ></vue-feather>
           </RouterLink>
-<!--          <a-->
-<!--            href="contact-us-classic.html"-->
-<!--            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"-->
-<!--          >-->
-<!--            <vue-feather-->
-<!--              type="arrow-right"-->
-<!--              stroke="#bf8c4c"-->
-<!--              size="40"-->
-<!--            ></vue-feather>-->
-<!--          </a>-->
+          <!--          <a-->
+          <!--            href="contact-us-classic.html"-->
+          <!--            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"-->
+          <!--          >-->
+          <!--            <vue-feather-->
+          <!--              type="arrow-right"-->
+          <!--              stroke="#bf8c4c"-->
+          <!--              size="40"-->
+          <!--            ></vue-feather>-->
+          <!--          </a>-->
         </div>
       </div>
     </div>
