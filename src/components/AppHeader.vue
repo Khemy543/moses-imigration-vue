@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
-/* onMounted(() => {
+onMounted(() => {
   window.addEventListener("scroll", () => {
     const header = document.getElementById("header");
     var scrollPas = window.scrollY;
@@ -16,11 +16,50 @@ import { ref, onMounted } from "vue";
         document.querySelector(".header-with-topbar").classList.add("sticky");
         document
           .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-49");
+
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-49");
+
+        document
+          .querySelector(".header-with-topbar .top-bar")
           .classList.add("top--49");
         document
           .querySelector(".header-with-topbar .fixed-top")
           .classList.add("top-0");
       } else if (scrollPas <= headerHeight) {
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .top-bar")
+          .classList.remove("top-49");
+
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-0");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top--49");
+        document
+          .querySelector(".header-with-topbar .fixed-top")
+          .classList.remove("top-49");
         document
           .querySelector(".header-with-topbar .top-bar")
           .classList.add("top-0");
@@ -36,7 +75,9 @@ import { ref, onMounted } from "vue";
         .querySelector(".header-with-topbar")
         .classList.remove("header-appear");
     } else {
-      document.querySelector(".sticky").classList.add("header-appear");
+      document
+        .querySelector(".header-with-topbar")
+        .classList.add("header-appear");
     }
 
     if (lastScroll <= navHeight) {
@@ -44,8 +85,12 @@ import { ref, onMounted } from "vue";
         .querySelector(".header-with-topbar")
         .classList.remove("header-appear");
     }
+
+    if (scrollPas <= 0) {
+      document.querySelector(".header-with-topbar").classList.remove("sticky");
+    }
   });
-}); */
+});
 
 const megaLinks = ref([
   {
