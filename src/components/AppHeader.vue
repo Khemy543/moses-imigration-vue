@@ -53,11 +53,6 @@ const megaLinks = ref([
     show: false,
     submenu: [
       {
-        id: 1,
-        name: "Family Class",
-        link: "/family-class-immigration",
-      },
-      {
         id: 2,
         name: "Economy Class",
         link: "/economy-class",
@@ -85,6 +80,11 @@ const megaLinks = ref([
         name: "Family Class",
         link: "/family-class-sponsorship",
       },
+      {
+        id: 2,
+        name: "Economy Class",
+        link: "/economy-class",
+      },
     ],
   },
   {
@@ -100,6 +100,11 @@ const megaLinks = ref([
       },
       {
         id: 2,
+        name: "Open Work Permit",
+        link: "/open-work-permit",
+      },
+      {
+        id: 3,
         name: "Work Permit (LMIA)",
         link: "/work-permit",
       },

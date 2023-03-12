@@ -39,6 +39,16 @@ const router = createRouter({
       name: "study-permit",
       component: () => import("../views/StudyPermit.vue"),
     },
+    {
+      path: "/open-work-permit",
+      name: "open-work-permit",
+      component: () => import("../views/OpenWorkPermit.vue"),
+    },
+    {
+      path: "/economy-class",
+      name: "economy-class",
+      component: () => import("../views/EconomyClass.vue"),
+    },
   ],
 });
 
