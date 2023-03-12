@@ -35,6 +35,11 @@ const router = createRouter({
       component: () => import("../views/FamilyClassSponsorship.vue"),
     },
     {
+      path: "/express-entry",
+      name: "express-entry",
+      component: () => import("../views/ExpressEntry.vue"),
+    },
+    {
       path: "/study-permit",
       name: "study-permit",
       component: () => import("../views/StudyPermit.vue"),
@@ -45,9 +50,14 @@ const router = createRouter({
       component: () => import("../views/OpenWorkPermit.vue"),
     },
     {
+      path: "/lmia-work-permit",
+      name: "lmia-work-permit",
+      component: () => import("../views/LMIA.vue"),
+    },
+    {
       path: "/economy-class",
       name: "economy-class",
-      component: () => import("../views/EconomyClass.vue"),
+      component: () => import("../views/ExpressEntry.vue"),
     },
   ],
 });

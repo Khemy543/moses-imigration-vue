@@ -16,24 +16,14 @@ const megaLinks = ref([
     submenu: [
       {
         id: 1,
-        name: "Why imigration consultant",
-        link: "/why-imigration-consiltant",
-      } /* 
-      {
-        id: 2,
-        name: "Facts",
-        link: "/fact",
-      }, */,
+        name: "Why immigration consultant",
+        link: "/why-immigration-consultant",
+      },
       {
         id: 3,
         name: "Google Reviews",
         link: "/google-reviews",
-      } /* 
-      {
-        id: 4,
-        name: "Marketing",
-        link: "/marketing",
-      }, */,
+      },
       {
         id: 5,
         name: "Privacy policy",
@@ -52,21 +42,21 @@ const megaLinks = ref([
     link: "/immigration-categories",
     show: false,
     submenu: [
-      {
-        id: 2,
-        name: "Economy Class",
-        link: "/economy-class",
-      },
-      {
-        id: 3,
-        name: "Refugee Class",
-        link: "/refugee-class",
-      },
-      {
-        id: 4,
-        name: "Temporary Residence Class",
-        link: "/temporary-residence-class",
-      },
+      // {
+      //   id: 2,
+      //   name: "Economy Class",
+      //   link: "/economy-class",
+      // },
+      // {
+      //   id: 3,
+      //   name: "Refugee Class",
+      //   link: "/refugee-class",
+      // },
+      // {
+      //   id: 4,
+      //   name: "Temporary Residence Class",
+      //   link: "/temporary-residence-class",
+      // },
     ],
   },
   {
@@ -82,8 +72,36 @@ const megaLinks = ref([
       },
       {
         id: 2,
-        name: "Economy Class",
-        link: "/economy-class",
+        name: "Refugee Class",
+        link: "/refugee-class",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Economy Class",
+    link: "/economy-class",
+    show: false,
+    submenu: [
+      {
+        id: 1,
+        name: "Express Entry",
+        link: "/express-entry",
+      },
+      {
+        id: 2,
+        name: "Atlantic Immigration Pilot",
+        link: "/atlantic-immigration-pilot",
+      },
+      {
+        id: 3,
+        name: "Provincial Nominee Program",
+        link: "/provincial-nominee-program",
+      },
+      {
+        id: 4,
+        name: "Rural & Northern Immigration Pilot",
+        link: "/rural-and-northern-immigration-pilot",
       },
     ],
   },
@@ -106,7 +124,17 @@ const megaLinks = ref([
       {
         id: 3,
         name: "Work Permit (LMIA)",
-        link: "/work-permit",
+        link: "/lmia-work-permit",
+      },
+      {
+        id: 4,
+        name: "LMIA Exempt",
+        link: "/lmia-exempt",
+      },
+      {
+        id: 5,
+        name: "LMIA Global Talent Stream",
+        link: "/lmia-global-global-talent-stream",
       },
     ],
   },

@@ -33,6 +33,25 @@
         <div class="row justify-content-center">
             <div class="col-12 col-xl-10 col-lg-10 col-md-10">
                 <p>
+                  The LMIA-based work permit is normally acquired through a two-step application
+                  process, as follows: <br><br>
+                  <b>Step 1:</b> The employer meets the eligibility requirements and submits an LMIA application
+                  (Insert link to Moses LMIA page) to ESDC (Service Canada). After assessing the application,
+                  ESDC provides the employer with either a positive or negative decision. If the LMIA application
+                  receives a positive decision, then the employer is approved to hire a Foreign National on
+                  temporary basis.<br><br>
+                  <b>Step 2:</b> The Foreign National submits the application for the LMIA-based work permit at a
+                  nearby IRCC Visa Office or through the online application platform. The Visa Office makes the
+                  decision on the application.
+                  Note: This type of work permit is employer-specific. This means that you may only work
+                  as the occupation and for the employer stated on your work permit, at the location stated
+                  on your work permit.
+                  Moses Canadian Immigration Consulting Services can assist you in determining your
+                  eligibility for and applying to this program. Click here (Insert link to the LMIA contact
+                  information table) to contact us for a consultation.
+                  Please contact us if you have any questions or require more information.
+                </p>
+                <p>
                   In situations where a Canadian employer is not able to find qualified Canadian Citizens or Permanent Residents to fill vacant job positions, as a last resort and with considerable limitations they can hire Foreign Nationals (worker(s)).
                 </p>
                 <p>
@@ -47,7 +66,8 @@
                   In general, the LMIA process is slightly different from other immigration streams. Therefore, employers should understand the process and the commitments they are
                   required to make when hiring employees through the TFWP. There are several categories under the LMIA-based employment streams. The following are some of the most common:
 
-                    <ul>
+
+                  <ul>
                         <li>Higher-skilled Occupations</li>
                         <li>Lower-skilled Occupations</li>
                         <li>Caregivers (For inside Canada Students &amp; Workers)</li>
@@ -92,7 +112,8 @@
                   >.</p>
                 </div>
             </div>
-        </div>
+            </div>
+      </div>
       </div>
     </section>
 </template>
