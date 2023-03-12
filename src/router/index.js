@@ -55,9 +55,19 @@ const router = createRouter({
       component: () => import("../views/LMIA.vue"),
     },
     {
-      path: "/economy-class",
-      name: "economy-class",
-      component: () => import("../views/ExpressEntry.vue"),
+      path: "/lmia-exempt",
+      name: "lmia-exempt",
+      component: () => import("../views/LMIAExempt.vue"),
+    },
+    {
+      path: "/atlantic-immigration-pilot",
+      name: "atlantic-immigration-pilot",
+      component: () => import("../views/AtlanticImmigration.vue"),
+    },
+    {
+      path: "/rural-and-northern-immigration-pilot",
+      name: "rural-and-northern-immigration-pilot",
+      component: () => import("../views/RuralImmigration.vue"),
     },
   ],
 });

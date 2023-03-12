@@ -64,7 +64,7 @@
             <div class="feature-box-content last-paragraph-no-margin">
               <span
                 class="alt-font font-weight-500 margin-5px-bottom d-block text-medium-slate-blue"
-                >Economy Classes</span
+                >Economy Class</span
               >
               <p class="w-85 xs-w-100">
                 Lorem ipsum dolor amet consectetur adipiscing elit
