@@ -60,9 +60,9 @@ const router = createRouter({
       component: () => import("../views/AtlanticImmigration.vue"),
     },
     {
-      path: "/economy-class",
-      name: "economy-class",
-      component: () => import("../views/ExpressEntry.vue"),
+      path: "/rural-and-northern-immigration-pilot",
+      name: "rural-and-northern-immigration-pilot",
+      component: () => import("../views/RuralImmigration.vue"),
     },
   ],
 });
