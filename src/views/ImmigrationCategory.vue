@@ -278,7 +278,7 @@
             Temporary Residence Class
           </h5>
           <p>
-            This class is concerned with temporary residence permit (as
+            This class is concerned with temporary residence visa (as
             authorized by the visa officer at the Port of Entry). The most
             popular permits in this category are Super Visa, Visitors’ Visa and
             Tourist Visa. Again, Canada is among the very few countries next to
@@ -289,7 +289,7 @@
             Canada as temporary residents so long they meet the requirements. In
             addition, Canada, as among the most naturally rich countries of the
             world, it welcomes tourists, visitors or anyone who would love to
-            transit through Canada. Therefore, temporary residence permit
+            transit through Canada. Therefore, temporary residence visa
             comprises part of the most important immigration streams.
           </p>
         </div>
