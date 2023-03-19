@@ -618,22 +618,6 @@ onMounted(() => {
                 class="swiper-slide overflow-hidden"
               >
                 <div class="portfolio-box text-center">
-                  <div class="portfolio-image bg-gradient-fast-blue-purple">
-                    <a href="single-project-page-02.html"
-                      ><img src="https://via.placeholder.com/800x1000" alt=""
-                    /></a>
-                    <div
-                      class="portfolio-hover align-items-center justify-content-center d-flex"
-                    >
-                      <div class="portfolio-icon">
-                        <a
-                          href="single-project-page-02.html"
-                          class="border-all border-width-2px rounded-circle border-color-white bg-white"
-                          ><i class="ti-arrow-right text-extra-dark-gray"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
                   <router-link
                     class="portfolio-caption padding-1-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px text-center margin-15px-bottom"
                     style="
@@ -646,7 +630,6 @@ onMounted(() => {
                     :to="cat.link"
                   >
                     <h5
-                      href="single-project-page-02.html"
                       class="alt-font text-extra-dark-gray font-weight-500 text-uppercase text-medium"
                     >
                       {{ cat.name }}

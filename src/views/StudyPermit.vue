@@ -184,7 +184,7 @@
               application.
               <a
                 href="/free-assessment-form"
-                class="btn btn-fancy btn-small btn-dark-gray margin-35px-right xs-margin-10px-bottom"
+                class="btn btn-fancy btn-small btn-dark-gray xs-margin-10px-bottom"
                 >Click</a
               >
               to access the assessment form. Please contact us if you have any
