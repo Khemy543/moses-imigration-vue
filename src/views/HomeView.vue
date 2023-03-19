@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 
 const categories = ref([
   {
@@ -28,6 +29,89 @@ const categories = ref([
   },
 ]);
 
+const consultingServices = ref([
+  {
+    id: 1,
+    name: " Express Entry",
+    description:
+      "Federal Skilled Worker Program, Canadian Experience Class and Federal Skilled Trades Program",
+    link: "/express-entry",
+  },
+  {
+    id: 2,
+    name: "Family Sponsorship",
+    description:
+      "Spousal Sponsorship, Parents and Grandparents, Dependent Children",
+    link: "/family-class-sponsership",
+  },
+  {
+    id: 3,
+    name: "LMIA",
+    description: "",
+    link: "/lmia-work-permit",
+  },
+  {
+    id: 4,
+    name: "LMIA-exempt Work Permits",
+    description: "",
+    link: "/lmia-exempt",
+  },
+  {
+    id: 5,
+    name: "Provincial Nominee Programs",
+    description: "",
+    link: "/provincial-nominee-program",
+  },
+  {
+    id: 6,
+    name: "Atlantic Immigration Program",
+    description: "",
+    link: "/atlantic-immigration-pilot",
+  },
+  {
+    id: 7,
+    name: "Rural and Northern Immigration  Pilot",
+    description: "",
+    link: "/rural-and-northern-immigration-pilot",
+  },
+  {
+    id: 8,
+    name: "Private Sponsorship of Refugees",
+    description: "Group Five Sponsorship",
+    link: "/",
+  },
+  {
+    id: 9,
+    name: "Work Permit Applications",
+    description: "",
+    link: "/",
+  },
+  {
+    id: 10,
+    name: "Study Permit Applications",
+    description: "",
+    link: "/study-permit",
+  },
+  {
+    id: 11,
+    name: "Visitor Visa Applications",
+    description: "",
+    link: "/",
+  },
+  {
+    id: 12,
+    name: "Canadian Citizenship",
+    description: "",
+    link: "/",
+  },
+  {
+    id: 13,
+    name: "Permanent Resident",
+    description: "",
+    link: "/",
+  },
+]);
+
 const openCollapse = (index) => {
   categories.value = categories.value.map((category) => ({
     ...category,
@@ -35,6 +119,26 @@ const openCollapse = (index) => {
   }));
   categories.value[index].collapsed = true;
 };
+
+onMounted(() => {
+  new Swiper(".swiper-container", {
+    modules: [Navigation, Pagination, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 26,
+    navigation: {
+      nextEl: ".swiper-button-next-nav",
+      prevEl: ".swiper-button-previous-nav",
+    },
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    keyboard: { enabled: true, onlyInViewport: true },
+    breakpoints: {
+      1200: { slidesPerView: 5 },
+      992: { slidesPerView: 3 },
+      768: { slidesPerView: 2 },
+    },
+    effect: "slide",
+  });
+});
 </script>
 
 <template>
@@ -43,7 +147,7 @@ const openCollapse = (index) => {
     <div class="container position-relative">
       <div class="row full-screen md-h-800px sm-h-500px">
         <div
-          class="col-12 col-xl-5 col-lg-6 col-md-7 col-sm-10 d-flex flex-column justify-content-center"
+          class="col-12 col-xl-6 col-lg-6 col-md-7 col-sm-10 d-flex flex-column justify-content-center"
         >
           <h2
             class="alt-font text-white line-height-65px font-weight-500 letter-spacing-minus-1px margin-65px-bottom sm-line-height-50px sm-margin-25px-bottom"
@@ -69,7 +173,7 @@ const openCollapse = (index) => {
       </div>
     </div>
     <div
-      class="d-flex flex-row justify-content-end ms-auto w-750px position-absolute right-0px bottom-0px z-index-1 sm-position-relative sm-w-100"
+      class="d-flex flex-row justify-content-end ms-auto w-700px position-absolute right-0px bottom-0px z-index-1 sm-position-relative sm-w-100"
     >
       <div class="row align-items-center justify-content-end mx-0 w-100">
         <div
@@ -130,10 +234,10 @@ const openCollapse = (index) => {
           </p>
 
           <div class="margin-40px-top d-inline-block md-margin-25px-top">
-            <a
-              href="about-us.html"
+            <router-link
+              to="/about-us"
               class="btn btn-fancy btn-small btn-dark-gray margin-35px-right xs-margin-10px-bottom"
-              >Read more</a
+              >Read more</router-link
             >
           </div>
         </div>
@@ -173,167 +277,163 @@ const openCollapse = (index) => {
         class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center"
       >
         <!-- start team member -->
-<!--        <div-->
-<!--          class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"-->
-<!--          data-wow-delay="0.4s"-->
-<!--        >-->
-<!--          <figure>-->
-<!--            <div class="team-member-image">-->
-<!--              <img-->
-<!--                alt="About team 17"-->
-<!--                src="https://via.placeholder.com/375x460"-->
-<!--              />-->
-<!--              <div-->
-<!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
-<!--              ></div>-->
-<!--            </div>-->
-<!--            <figcaption-->
-<!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
-<!--            >-->
-<!--              <span class="team-title d-block alt-font text-white"-->
-<!--                >Bryan Jonhson</span-->
-<!--              >-->
-<!--              <span-->
-<!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
-<!--                >Specialist consultant</span-->
-<!--              >-->
-<!--              <div-->
-<!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
-<!--              >-->
-<!--                <a-->
-<!--                  href="https://www.facebook.com/"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
-<!--                ></a>-->
-<!--                <a-->
-<!--                  href="https://www.instagram.com"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
-<!--                ></a>-->
-<!--                <a-->
-<!--                  href="https://twitter.com/"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
-<!--                ></a>-->
-<!--              </div>-->
-<!--            </figcaption>-->
-<!--          </figure>-->
-<!--        </div>-->
+        <!--        <div-->
+        <!--          class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"-->
+        <!--          data-wow-delay="0.4s"-->
+        <!--        >-->
+        <!--          <figure>-->
+        <!--            <div class="team-member-image">-->
+        <!--              <img-->
+        <!--                alt="About team 17"-->
+        <!--                src="https://via.placeholder.com/375x460"-->
+        <!--              />-->
+        <!--              <div-->
+        <!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
+        <!--              ></div>-->
+        <!--            </div>-->
+        <!--            <figcaption-->
+        <!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
+        <!--            >-->
+        <!--              <span class="team-title d-block alt-font text-white"-->
+        <!--                >Bryan Jonhson</span-->
+        <!--              >-->
+        <!--              <span-->
+        <!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
+        <!--                >Specialist consultant</span-->
+        <!--              >-->
+        <!--              <div-->
+        <!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
+        <!--              >-->
+        <!--                <a-->
+        <!--                  href="https://www.facebook.com/"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
+        <!--                ></a>-->
+        <!--                <a-->
+        <!--                  href="https://www.instagram.com"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
+        <!--                ></a>-->
+        <!--                <a-->
+        <!--                  href="https://twitter.com/"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
+        <!--                ></a>-->
+        <!--              </div>-->
+        <!--            </figcaption>-->
+        <!--          </figure>-->
+        <!--        </div>-->
         <!-- end team member -->
         <!-- start team member -->
-<!--        <div-->
-<!--          class="col team-style-01 text-center xs-margin-15px-bottom wow animate__fadeIn"-->
-<!--          data-wow-delay="0.6s"-->
-<!--        >-->
-<!--          <figure>-->
-<!--            <div class="team-member-image">-->
-<!--              <img-->
-<!--                alt="About team 18"-->
-<!--                src="https://via.placeholder.com/375x460"-->
-<!--              />-->
-<!--              <div-->
-<!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
-<!--              ></div>-->
-<!--            </div>-->
-<!--            <figcaption-->
-<!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
-<!--            >-->
-<!--              <span class="team-title d-block alt-font text-white"-->
-<!--                >Jemmy Watson</span-->
-<!--              >-->
-<!--              <span-->
-<!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
-<!--                >Financial consultant</span-->
-<!--              >-->
-<!--              <div-->
-<!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
-<!--              >-->
-<!--                <a-->
-<!--                  href="https://www.facebook.com/"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
-<!--                ></a>-->
-<!--                <a-->
-<!--                  href="https://www.instagram.com"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
-<!--                ></a>-->
-<!--                <a-->
-<!--                  href="https://twitter.com/"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
-<!--                ></a>-->
-<!--              </div>-->
-<!--            </figcaption>-->
-<!--          </figure>-->
-<!--        </div>-->
+        <!--        <div-->
+        <!--          class="col team-style-01 text-center xs-margin-15px-bottom wow animate__fadeIn"-->
+        <!--          data-wow-delay="0.6s"-->
+        <!--        >-->
+        <!--          <figure>-->
+        <!--            <div class="team-member-image">-->
+        <!--              <img-->
+        <!--                alt="About team 18"-->
+        <!--                src="https://via.placeholder.com/375x460"-->
+        <!--              />-->
+        <!--              <div-->
+        <!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
+        <!--              ></div>-->
+        <!--            </div>-->
+        <!--            <figcaption-->
+        <!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
+        <!--            >-->
+        <!--              <span class="team-title d-block alt-font text-white"-->
+        <!--                >Jemmy Watson</span-->
+        <!--              >-->
+        <!--              <span-->
+        <!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
+        <!--                >Financial consultant</span-->
+        <!--              >-->
+        <!--              <div-->
+        <!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
+        <!--              >-->
+        <!--                <a-->
+        <!--                  href="https://www.facebook.com/"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
+        <!--                ></a>-->
+        <!--                <a-->
+        <!--                  href="https://www.instagram.com"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
+        <!--                ></a>-->
+        <!--                <a-->
+        <!--                  href="https://twitter.com/"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
+        <!--                ></a>-->
+        <!--              </div>-->
+        <!--            </figcaption>-->
+        <!--          </figure>-->
+        <!--        </div>-->
         <!-- end team member -->
         <!-- start team member -->
-<!--        <div-->
-<!--          class="col team-style-01 text-center wow animate__fadeIn"-->
-<!--          data-wow-delay="0.8s"-->
-<!--        >-->
-<!--          <figure>-->
-<!--            <div class="team-member-image">-->
-<!--              <img-->
-<!--                alt="About team 19"-->
-<!--                src="https://via.placeholder.com/375x460"-->
-<!--              />-->
-<!--              <div-->
-<!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
-<!--              ></div>-->
-<!--            </div>-->
-<!--            <figcaption-->
-<!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
-<!--            >-->
-<!--              <span class="team-title d-block alt-font text-white"-->
-<!--                >Jeremy Dupont</span-->
-<!--              >-->
-<!--              <span-->
-<!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
-<!--                >Business consultant</span-->
-<!--              >-->
-<!--              <div-->
-<!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
-<!--              >-->
-<!--                <a-->
-<!--                  href="https://www.facebook.com/"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
-<!--                ></a>-->
-<!--                <a-->
-<!--                  href="https://www.instagram.com"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
-<!--                ></a>-->
-<!--                <a-->
-<!--                  href="https://twitter.com/"-->
-<!--                  target="_blank"-->
-<!--                  class="text-white"-->
-<!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
-<!--                ></a>-->
-<!--              </div>-->
-<!--            </figcaption>-->
-<!--          </figure>-->
-<!--        </div>-->
+        <!--        <div-->
+        <!--          class="col team-style-01 text-center wow animate__fadeIn"-->
+        <!--          data-wow-delay="0.8s"-->
+        <!--        >-->
+        <!--          <figure>-->
+        <!--            <div class="team-member-image">-->
+        <!--              <img-->
+        <!--                alt="About team 19"-->
+        <!--                src="https://via.placeholder.com/375x460"-->
+        <!--              />-->
+        <!--              <div-->
+        <!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
+        <!--              ></div>-->
+        <!--            </div>-->
+        <!--            <figcaption-->
+        <!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
+        <!--            >-->
+        <!--              <span class="team-title d-block alt-font text-white"-->
+        <!--                >Jeremy Dupont</span-->
+        <!--              >-->
+        <!--              <span-->
+        <!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
+        <!--                >Business consultant</span-->
+        <!--              >-->
+        <!--              <div-->
+        <!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
+        <!--              >-->
+        <!--                <a-->
+        <!--                  href="https://www.facebook.com/"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
+        <!--                ></a>-->
+        <!--                <a-->
+        <!--                  href="https://www.instagram.com"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
+        <!--                ></a>-->
+        <!--                <a-->
+        <!--                  href="https://twitter.com/"-->
+        <!--                  target="_blank"-->
+        <!--                  class="text-white"-->
+        <!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
+        <!--                ></a>-->
+        <!--              </div>-->
+        <!--            </figcaption>-->
+        <!--          </figure>-->
+        <!--        </div>-->
         <!-- end team member -->
       </div>
     </div>
   </section>
 
-  <section
-    class="parallax big-section"
-    data-parallax-background-ratio="0.2"
-    style="background-image: url('https://via.placeholder.com/1920x1100')"
-  >
+  <section class="parallax big-section" data-parallax-background-ratio="0.2">
     <div class="opacity-full bg-gradient-tussock-greenish-slate"></div>
     <div class="container">
       <div class="row justify-content-center">
@@ -342,7 +442,7 @@ const openCollapse = (index) => {
           data-wow-delay="0.2s"
         >
           <a
-            href="https://www.youtube.com/watch?v=g0f_BRYJLJE"
+            href="https://www.youtube.com/watch?v=vWPkPdbAPuM"
             class="popup-youtube video-icon-box video-icon-large position-relative d-inline-block margin-3-half-rem-bottom"
           >
             <span>
@@ -366,7 +466,7 @@ const openCollapse = (index) => {
       </div>
     </div>
   </section>
-  <section class="bg-seashell py-lg-0">
+  <section class="bg-white py-lg-0">
     <div class="container">
       <div class="row align-items-center">
         <div
@@ -375,7 +475,7 @@ const openCollapse = (index) => {
           <h5
             class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-half-rem-bottom w-75 md-margin-4-rem-bottom lg-margin-2-half-rem-bottom md-w-100 wow animate__fadeIn"
           >
-            MCICS provides consulting services in several areas of Canadian immigration such as applications through the following streams:
+            We provide different categories of canadian imigration
           </h5>
           <div
             class="panel-group accordion-event accordion-style-03 margin-4-rem-bottom lg-margin-2-rem-bottom"
@@ -406,14 +506,15 @@ const openCollapse = (index) => {
                     >
                       {{ cat.title }}</span
                     >
-                    <vue-feather
+                    <!-- <vue-feather
                       type="arrow-down"
                       stroke="#bf8c4c"
                       size="20"
-                    ></vue-feather>
+                    ></vue-feather> -->
                   </div>
                 </a>
               </div>
+              <!-- 
               <div
                 id="collapseFive"
                 class="panel-collapse collapse"
@@ -424,16 +525,16 @@ const openCollapse = (index) => {
                   Lorem ipsum is simply dummy text of the printing and
                   typesetting industry lorem ipsum has been.
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- end accordion item -->
           </div>
           <p class="m-0 wow animate__fadeIn" data-wow-delay="0.8s">
             Looking for more information?
-            <a
-              href="canadian-imigration-categories.html"
+            <router-link
+              to="/immigration-categories"
               class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-line-bottom"
-              >Click here</a
+              >Click here</router-link
             >
           </p>
         </div>
@@ -452,6 +553,134 @@ const openCollapse = (index) => {
       </div>
     </div>
   </section>
+
+  <section class="bg-seashell wow animate__fadeIn">
+    <div class="container-fluid">
+      <div
+        class="row align-items-stretch justify-content-center extra-small-screen"
+      >
+        <div
+          class="col-12 col-xl-6 col-lg-7 col-md-8 page-title-extra-small text-center d-flex justify-content-center flex-column"
+        >
+          <h5
+            class="text-extra-dark-gray alt-font font-weight-500 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
+          >
+            MCICS provides consulting services in several areas of Canadian
+            immigration such as applications through the following streams:
+          </h5>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-12 padding-8-half-rem-lr xl-padding-five-lr lg-padding-two-lr sm-padding-15px-lr"
+        >
+          <div
+            class="swiper-container overflow-hidden portfolio-classic position-relative swiper-pagination-bottom"
+          >
+            <div class="swiper-wrapper">
+              <!-- start slider item -->
+              <div class="swiper-slide overflow-hidden">
+                <div class="portfolio-box text-center">
+                  <div class="portfolio-image bg-gradient-fast-blue-purple">
+                    <a href="single-project-page-01.html"
+                      ><img src="https://via.placeholder.com/800x1000" alt=""
+                    /></a>
+                    <div
+                      class="portfolio-hover align-items-center justify-content-center d-flex"
+                    >
+                      <div class="portfolio-icon">
+                        <a
+                          href="single-project-page-01.html"
+                          class="border-all border-width-2px rounded-circle border-color-white bg-white"
+                          ><i class="ti-arrow-right text-extra-dark-gray"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="portfolio-caption padding-30px-tb">
+                    <a
+                      href="single-project-page-01.html"
+                      class="alt-font text-extra-dark-gray font-weight-500 text-uppercase"
+                      >Simply Apple</a
+                    >
+                    <span
+                      class="d-block text-medium-gray text-small line-height-18px text-uppercase"
+                      >Create brand</span
+                    >
+                  </div> -->
+                </div>
+              </div>
+              <!-- end slider item -->
+              <!-- start slider item -->
+              <div
+                v-for="cat in consultingServices"
+                :key="cat.id"
+                class="swiper-slide overflow-hidden"
+              >
+                <div class="portfolio-box text-center">
+                  <div class="portfolio-image bg-gradient-fast-blue-purple">
+                    <a href="single-project-page-02.html"
+                      ><img src="https://via.placeholder.com/800x1000" alt=""
+                    /></a>
+                    <div
+                      class="portfolio-hover align-items-center justify-content-center d-flex"
+                    >
+                      <div class="portfolio-icon">
+                        <a
+                          href="single-project-page-02.html"
+                          class="border-all border-width-2px rounded-circle border-color-white bg-white"
+                          ><i class="ti-arrow-right text-extra-dark-gray"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <router-link
+                    class="portfolio-caption padding-1-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px text-center margin-15px-bottom"
+                    style="
+                      min-height: 180px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    :to="cat.link"
+                  >
+                    <h5
+                      href="single-project-page-02.html"
+                      class="alt-font text-extra-dark-gray font-weight-500 text-uppercase text-medium"
+                    >
+                      {{ cat.name }}
+                    </h5>
+                    <span
+                      class="d-block text-medium-gray text-small line-height-18px text-uppercase"
+                      >{{ cat.description }}</span
+                    >
+                  </router-link>
+                </div>
+              </div>
+              <!-- end slider item -->
+              <!-- end slider item -->
+            </div>
+            <!-- start slider navigation -->
+            <div
+              class="swiper-button-previous-nav swiper-button-prev slider-navigation-style-03 rounded-circle center-prev"
+              style="width: 44px"
+            >
+              <vue-feather type="arrow-left" size="16"></vue-feather>
+            </div>
+            <div
+              class="swiper-button-next-nav swiper-button-next slider-navigation-style-03 rounded-circle center-next"
+              style="width: 44px"
+            >
+              <vue-feather type="arrow-right" size="16"></vue-feather>
+            </div>
+            <!-- end slider navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- start section -->
   <section class="bg-white">
     <div class="container">

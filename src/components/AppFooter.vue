@@ -30,15 +30,19 @@
               >Company</span
             >
             <ul>
-              <li><router-link to="about-us">About company</router-link></li>
+              <li><router-link to="/">Home</router-link></li>
               <li>
-                <router-link to="our-services">Company services</router-link>
+                <router-link to="about-us">About Us</router-link>
               </li>
               <li>
-                <router-link to="our-team">Job opportunities</router-link>
+                <router-link to="/immigration-categories"
+                  >Immigration Categories</router-link
+                >
               </li>
               <li>
-                <router-link to="contact-us-classic">Contact us</router-link>
+                <router-link to="/free-assessment-form"
+                  >Free Assessment Form</router-link
+                >
               </li>
             </ul>
           </div>
@@ -49,13 +53,15 @@
           >
             <span
               class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom"
-              >Customer</span
+              >Links</span
             >
             <ul>
-              <li><a href="faq.html">Client support</a></li>
-              <li><a href="latest-news.html">Latest news</a></li>
-              <li><a href="our-story.html">Company story</a></li>
-              <li><a href="pricing-packages.html">Pricing packages</a></li>
+              <li>
+                <router-link to="/contact">Contact Us</router-link>
+              </li>
+              <li><a href="latest-news.html">Facebook</a></li>
+              <li><a href="our-story.html">Linkedin</a></li>
+              <li><a href="pricing-packages.html">Twitter</a></li>
             </ul>
           </div>
           <!-- end footer column -->
@@ -103,27 +109,17 @@
           <div
             class="col-12 col-md-3 text-center text-md-start sm-margin-20px-bottom"
           >
-            <a href="index.html" class="footer-logo"
-              ><img
-                src="../assets/images/logo-white.png"
-                data-at2x="images/logo-white@2x.png"
-                alt=""
+            <a href="/" class="footer-logo"
+              ><img src="../assets/images/main/logo.png" alt=""
+              style="max-height: 100px; height: 60px;"
             /></a>
           </div>
           <div
             class="col-12 col-md-6 text-center last-paragraph-no-margin sm-margin-20px-bottom"
           >
-            <p>
-              &copy; 2021 Litho is Proudly Powered by
-              <a
-                href="https://www.themezaa.com/"
-                target="_blank"
-                class="text-decoration-line-bottom text-tussock text-white-hover font-weight-500"
-                >ThemeZaa</a
-              >
-            </p>
+            <p>&copy; 2023 Moses Canadian Immigration Consulting Services</p>
           </div>
-          <div class="col-12 col-md-3 text-center text-md-end">
+          <!-- <div class="col-12 col-md-3 text-center text-md-end">
             <div class="social-icon-style-12">
               <ul class="extra-small-icon light">
                 <li>
@@ -160,7 +156,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
