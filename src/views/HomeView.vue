@@ -173,157 +173,157 @@ const openCollapse = (index) => {
         class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center"
       >
         <!-- start team member -->
-        <div
-          class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
-          data-wow-delay="0.4s"
-        >
-          <figure>
-            <div class="team-member-image">
-              <img
-                alt="About team 17"
-                src="https://via.placeholder.com/375x460"
-              />
-              <div
-                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"
-              ></div>
-            </div>
-            <figcaption
-              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"
-            >
-              <span class="team-title d-block alt-font text-white"
-                >Bryan Jonhson</span
-              >
-              <span
-                class="team-sub-title text-small d-block text-white-transparent text-uppercase"
-                >Specialist consultant</span
-              >
-              <div
-                class="social-icon w-100 position-absolute bottom-30px left-0px"
-              >
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://twitter.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-twitter"></i
-                ></a>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
+<!--        <div-->
+<!--          class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"-->
+<!--          data-wow-delay="0.4s"-->
+<!--        >-->
+<!--          <figure>-->
+<!--            <div class="team-member-image">-->
+<!--              <img-->
+<!--                alt="About team 17"-->
+<!--                src="https://via.placeholder.com/375x460"-->
+<!--              />-->
+<!--              <div-->
+<!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
+<!--              ></div>-->
+<!--            </div>-->
+<!--            <figcaption-->
+<!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
+<!--            >-->
+<!--              <span class="team-title d-block alt-font text-white"-->
+<!--                >Bryan Jonhson</span-->
+<!--              >-->
+<!--              <span-->
+<!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
+<!--                >Specialist consultant</span-->
+<!--              >-->
+<!--              <div-->
+<!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
+<!--              >-->
+<!--                <a-->
+<!--                  href="https://www.facebook.com/"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
+<!--                ></a>-->
+<!--                <a-->
+<!--                  href="https://www.instagram.com"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
+<!--                ></a>-->
+<!--                <a-->
+<!--                  href="https://twitter.com/"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
+<!--                ></a>-->
+<!--              </div>-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--        </div>-->
         <!-- end team member -->
         <!-- start team member -->
-        <div
-          class="col team-style-01 text-center xs-margin-15px-bottom wow animate__fadeIn"
-          data-wow-delay="0.6s"
-        >
-          <figure>
-            <div class="team-member-image">
-              <img
-                alt="About team 18"
-                src="https://via.placeholder.com/375x460"
-              />
-              <div
-                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"
-              ></div>
-            </div>
-            <figcaption
-              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"
-            >
-              <span class="team-title d-block alt-font text-white"
-                >Jemmy Watson</span
-              >
-              <span
-                class="team-sub-title text-small d-block text-white-transparent text-uppercase"
-                >Financial consultant</span
-              >
-              <div
-                class="social-icon w-100 position-absolute bottom-30px left-0px"
-              >
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://twitter.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-twitter"></i
-                ></a>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
+<!--        <div-->
+<!--          class="col team-style-01 text-center xs-margin-15px-bottom wow animate__fadeIn"-->
+<!--          data-wow-delay="0.6s"-->
+<!--        >-->
+<!--          <figure>-->
+<!--            <div class="team-member-image">-->
+<!--              <img-->
+<!--                alt="About team 18"-->
+<!--                src="https://via.placeholder.com/375x460"-->
+<!--              />-->
+<!--              <div-->
+<!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
+<!--              ></div>-->
+<!--            </div>-->
+<!--            <figcaption-->
+<!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
+<!--            >-->
+<!--              <span class="team-title d-block alt-font text-white"-->
+<!--                >Jemmy Watson</span-->
+<!--              >-->
+<!--              <span-->
+<!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
+<!--                >Financial consultant</span-->
+<!--              >-->
+<!--              <div-->
+<!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
+<!--              >-->
+<!--                <a-->
+<!--                  href="https://www.facebook.com/"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
+<!--                ></a>-->
+<!--                <a-->
+<!--                  href="https://www.instagram.com"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
+<!--                ></a>-->
+<!--                <a-->
+<!--                  href="https://twitter.com/"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
+<!--                ></a>-->
+<!--              </div>-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--        </div>-->
         <!-- end team member -->
         <!-- start team member -->
-        <div
-          class="col team-style-01 text-center wow animate__fadeIn"
-          data-wow-delay="0.8s"
-        >
-          <figure>
-            <div class="team-member-image">
-              <img
-                alt="About team 19"
-                src="https://via.placeholder.com/375x460"
-              />
-              <div
-                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"
-              ></div>
-            </div>
-            <figcaption
-              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"
-            >
-              <span class="team-title d-block alt-font text-white"
-                >Jeremy Dupont</span
-              >
-              <span
-                class="team-sub-title text-small d-block text-white-transparent text-uppercase"
-                >Business consultant</span
-              >
-              <div
-                class="social-icon w-100 position-absolute bottom-30px left-0px"
-              >
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://twitter.com/"
-                  target="_blank"
-                  class="text-white"
-                  ><i aria-hidden="true" class="fab fa-twitter"></i
-                ></a>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
+<!--        <div-->
+<!--          class="col team-style-01 text-center wow animate__fadeIn"-->
+<!--          data-wow-delay="0.8s"-->
+<!--        >-->
+<!--          <figure>-->
+<!--            <div class="team-member-image">-->
+<!--              <img-->
+<!--                alt="About team 19"-->
+<!--                src="https://via.placeholder.com/375x460"-->
+<!--              />-->
+<!--              <div-->
+<!--                class="team-overlay bg-transparent-gradient-tussock-greenish-slate"-->
+<!--              ></div>-->
+<!--            </div>-->
+<!--            <figcaption-->
+<!--              class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb"-->
+<!--            >-->
+<!--              <span class="team-title d-block alt-font text-white"-->
+<!--                >Jeremy Dupont</span-->
+<!--              >-->
+<!--              <span-->
+<!--                class="team-sub-title text-small d-block text-white-transparent text-uppercase"-->
+<!--                >Business consultant</span-->
+<!--              >-->
+<!--              <div-->
+<!--                class="social-icon w-100 position-absolute bottom-30px left-0px"-->
+<!--              >-->
+<!--                <a-->
+<!--                  href="https://www.facebook.com/"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-facebook-f"></i-->
+<!--                ></a>-->
+<!--                <a-->
+<!--                  href="https://www.instagram.com"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-instagram"></i-->
+<!--                ></a>-->
+<!--                <a-->
+<!--                  href="https://twitter.com/"-->
+<!--                  target="_blank"-->
+<!--                  class="text-white"-->
+<!--                  ><i aria-hidden="true" class="fab fa-twitter"></i-->
+<!--                ></a>-->
+<!--              </div>-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--        </div>-->
         <!-- end team member -->
       </div>
     </div>
@@ -375,7 +375,7 @@ const openCollapse = (index) => {
           <h5
             class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-half-rem-bottom w-75 md-margin-4-rem-bottom lg-margin-2-half-rem-bottom md-w-100 wow animate__fadeIn"
           >
-            We provide different categories of canadian imigration
+            MCICS provides consulting services in several areas of Canadian immigration such as applications through the following streams:
           </h5>
           <div
             class="panel-group accordion-event accordion-style-03 margin-4-rem-bottom lg-margin-2-rem-bottom"
