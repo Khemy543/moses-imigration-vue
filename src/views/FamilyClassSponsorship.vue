@@ -41,8 +41,7 @@
               <h5
                 class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom"
               >
-                We believe people deserve to earn a living doing what they love
-                - full width post
+                We believe in the reunification of all family members
               </h5>
               <!-- <img
                 src="https://via.placeholder.com/780x500"
