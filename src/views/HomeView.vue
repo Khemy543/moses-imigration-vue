@@ -579,39 +579,6 @@ onMounted(() => {
           >
             <div class="swiper-wrapper">
               <!-- start slider item -->
-              <div class="swiper-slide overflow-hidden">
-                <div class="portfolio-box text-center">
-                  <div class="portfolio-image bg-gradient-fast-blue-purple">
-                    <a href="single-project-page-01.html"
-                      ><img src="https://via.placeholder.com/800x1000" alt=""
-                    /></a>
-                    <div
-                      class="portfolio-hover align-items-center justify-content-center d-flex"
-                    >
-                      <div class="portfolio-icon">
-                        <a
-                          href="single-project-page-01.html"
-                          class="border-all border-width-2px rounded-circle border-color-white bg-white"
-                          ><i class="ti-arrow-right text-extra-dark-gray"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="portfolio-caption padding-30px-tb">
-                    <a
-                      href="single-project-page-01.html"
-                      class="alt-font text-extra-dark-gray font-weight-500 text-uppercase"
-                      >Simply Apple</a
-                    >
-                    <span
-                      class="d-block text-medium-gray text-small line-height-18px text-uppercase"
-                      >Create brand</span
-                    >
-                  </div> -->
-                </div>
-              </div>
-              <!-- end slider item -->
-              <!-- start slider item -->
               <div
                 v-for="cat in consultingServices"
                 :key="cat.id"
