@@ -443,6 +443,7 @@ onMounted(() => {
         >
           <a
             href="https://www.youtube.com/watch?v=vWPkPdbAPuM"
+            target="_blank"
             class="popup-youtube video-icon-box video-icon-large position-relative d-inline-block margin-3-half-rem-bottom"
           >
             <span>
