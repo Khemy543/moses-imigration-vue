@@ -36,10 +36,10 @@
         <div
           class="col-12 col-lg-6 col-sm-8 text-center margin-6-rem-bottom md-margin-3-rem-bottom xs-margin-4-rem-bottom wow animate__fadeIn"
         >
-          <span
+          <!-- <span
             class="d-block margin-40px-bottom md-margin-25px-bottom xs-margin-15px-bottom"
             ><img src="https://via.placeholder.com/150x78" alt=""
-          /></span>
+          /></span> -->
           <h5
             class="alt-font text-extra-dark-gray font-weight-500 letter-spacing-minus-1px text-uppercase"
           >
@@ -57,20 +57,21 @@
           class="col lg-margin-30px-bottom md-margin-40px-bottom wow animate__fadeIn"
           data-wow-delay="0.4s"
         >
-          <div class="feature-box text-center">
-            <div class="feature-box-icon">
-              <!-- <i
-                class="line-icon-Teapot icon-medium text-light-pink margin-30px-bottom"
-              ></i> -->
-            </div>
+          <div
+            class="portfolio-caption padding-2-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px text-center margin-15px-bottom"
+            style="
+              min-height: 150px;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
             <div class="feature-box-content last-paragraph-no-margin">
               <span
                 class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-medium text-uppercase letter-spacing-1px"
-                >Federal Skilled Worker Program (FSWP)</span
+                >Federal Skilled Worker Program<br />(FSWP)</span
               >
-              <p class="m-auto w-85">
-                Lorem ipsum is simply dummy text the printing typesetting
-              </p>
             </div>
           </div>
         </div>
@@ -80,40 +81,41 @@
           class="col xs-margin-40px-bottom wow animate__fadeIn"
           data-wow-delay="0.6s"
         >
-          <div class="feature-box text-center">
-            <div class="feature-box-icon">
-              <!-- <i
-                class="line-icon-ICQ icon-medium text-light-pink margin-30px-bottom"
-              ></i> -->
-            </div>
-            <div class="feature-box-content last-paragraph-no-margin">
-              <span
-                class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-medium text-uppercase letter-spacing-1px"
-                >Canadian Experience Class (CEC)</span
-              >
-              <p class="m-auto w-85">
-                Lorem ipsum is simply dummy text the printing typesetting
-              </p>
-            </div>
+          <div
+            class="portfolio-caption padding-2-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px text-center margin-15px-bottom"
+            style="
+              min-height: 150px;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <p
+              class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-medium text-uppercase letter-spacing-1px text-center"
+            >
+              Canadian Experience Class<br />(CEC)
+            </p>
           </div>
         </div>
         <!-- end feature box item -->
         <!-- start feature box item -->
         <div class="col wow animate__fadeIn" data-wow-delay="0.8s">
-          <div class="feature-box text-center">
-            <div class="feature-box-icon">
-              <!--  <i
-                class="line-icon-Leafs icon-medium text-light-pink margin-30px-bottom"
-              ></i> -->
-            </div>
+          <div
+            class="portfolio-caption padding-2-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px text-center margin-15px-bottom"
+            style="
+              min-height: 150px;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
             <div class="feature-box-content last-paragraph-no-margin">
               <span
                 class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-medium text-uppercase letter-spacing-1px"
-                >Federal Skilled Trades Program (FSTP)</span
+                >Federal Skilled Trades Program<br />(FSTP)</span
               >
-              <p class="m-auto w-85">
-                Lorem ipsum is simply dummy text the printing typesetting
-              </p>
             </div>
           </div>
         </div>
@@ -153,7 +155,7 @@
           data-wow-delay="0.2s"
         >
           <img
-            src="../assets/images/main/imagration-cat.jpeg"
+            src="../assets/images/main/stairs.jpeg"
             alt=""
             style="width: 100%; height: 500px; object-fit: cover"
           />
@@ -236,7 +238,7 @@
       </div>
     </div>
   </section>
-  <section class="">
+  <section class="" style="padding-top: 0px">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12">

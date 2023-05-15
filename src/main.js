@@ -9,6 +9,10 @@ import "./assets/css/font-icons.min.css";
 import "./assets/css/theme-vendors.min.css";
 import "./assets/css/style.css";
 import "./assets/css/responsive.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 const app = createApp(App);
 

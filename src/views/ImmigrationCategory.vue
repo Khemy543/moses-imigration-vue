@@ -219,7 +219,7 @@
           data-wow-delay="0.2s"
         >
           <img
-            src="../assets/images/main/imagration-cat.jpeg"
+            src="../assets/images/main/family.jpeg"
             alt=""
             style="width: 100%; height: 500px; object-fit: cover"
           />
