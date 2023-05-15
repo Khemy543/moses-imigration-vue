@@ -1,0 +1,55 @@
+{
+    "about_us": {
+        "about": "À propos",
+        "moses": "Moses Services-conseils en immigration canadienne (MCICS)",
+        "mcics": "MCICS est une société canadienne de conseil en immigration enregistrée au CICC et basée à
+            Winnipeg, Manitoba, Canada. Il est géré par un Canadien réglementé
+            Consultant en immigration (RCIC), membre enregistré et agréé du
+            Collège des consultants en immigration et citoyenneté (CICC) en bonne
+            debout. Grâce au MCICS, les clients sont mieux servis dans diverses questions de
+            l'immigration canadienne. MCICS fournit des services impartiaux et équitables à tous
+            ses clients qui sont basés à la fois au Canada et à l'extérieur du Canada. À partir de
+            maintenant, MCICS ne facture pas d'argent pour la première heure (initial
+            consultation) des services d'évaluation professionnelle. Le principal objectif du MCICS
+            est la satisfaction et le succès de ses clients.",
+        "owner": "Mussie Tesfagiorgis est le propriétaire et directeur général de MCICS, et il
+            est membre en règle du CICC (The College of Immigration and
+            Citizenship Consultants) – une autorité de régulation qui réglemente tous
+            les consultants en immigration.",
+        "regulated_consultant": "Consultant réglementé en immigration canadienne",
+        "rcic": "Contexte du R.C.I.C",
+        "who_is_rcic": "Qui est le R.C.I.C ?",
+        "book_for_free": "Prenez rendez-vous gratuitement pour",
+        "canadian_dream": "Rêve canadien"
+    },
+    "atlantic_immigration": {
+        "atlantic_immigration_programme": "Programme d'immigration de l'Atlantique",
+        "prgram_details": [
+            "Ce programme est spécialement conçu pour les employeurs qui cherchent à embaucher directement des étrangers qualifiés.
+            Les ressortissants sans avoir à passer par le processus d'évaluation de l'impact sur le marché du travail (EIMT).
+            Les employeurs font une offre directe d'emploi à un candidat sélectionné. Une fois le candidat
+            accepte l'offre, l'employeur les met en relation avec des prestataires de services d'établissement (désignés
+            organismes). Après avoir procédé à une évaluation approfondie des besoins, le fournisseur de services d'établissement
+            élabore un plan d'établissement pour le candidat et ses personnes à charge (le cas échéant).",
+            "Si l'employeur a un besoin urgent de combler son poste vacant, il peut choisir d'offrir un emploi à
+            le candidat par le biais d'un permis de travail temporaire. Il appartient au candidat de postuler
+            pour le permis de travail. Les exigences pour la demande de permis de travail temporaire comprennent, mais sont
+            sans s'y limiter, une offre d'emploi valide et une lettre de la province où se situe l'emploi. Dans
+            De plus, le candidat doit également confirmer son intention de postuler pour un emploi permanent
+            statut de résident dans les 90 jours suivant la demande de permis de travail temporaire.",
+        ],
+        "you_may_eligible": "Vous pourriez être admissible à un permis de travail ouvert si, entre autres catégories, vous êtes :",
+        "eligible_list": [
+            "Le candidat doit avoir une expérience de travail qui le qualifie pour le poste. Cependant,
+            si le candidat est un étudiant diplômé d'un établissement postsecondaire dans n'importe quelle partie de
+            Canada atlantique, il n'a pas besoin de prouver une expérience de travail admissible",
+            "Le candidat doit répondre aux critères pédagogiques fixés par le programme",
+            "À moins de vivre et de travailler au Canada, le candidat doit prouver que lui et ses
+            les personnes à charge ont des fonds de règlement suffisants",
+        ],
+        "moses_canadian_immigration": "<b>Moses Services de consultation en immigration canadienne</b> peut vous aider à déterminer votre
+        l'admissibilité de l'immigration au Canada dans le cadre de ce programme.",
+        "clicking_here": "cliquant ici"
+    }
+
+}

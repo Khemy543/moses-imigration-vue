@@ -1,0 +1,60 @@
+{
+    "about_us": {
+        "about": "About",
+        "moses": "Moses Canadian Immigration Consulting Services (MCICS)",
+        "mcics": "MCICS is a CICC registered Canadian immigration consulting firm based in
+        Winnipeg, Manitoba, Canada. It is run by a Regulated Canadian
+        Immigration Consultant (RCIC), registered and licensed member of the
+        College of Immigration and Citizenship Consultants (CICC) in good
+        standing. Through MCICS clients are best served in various matters of
+        Canadian immigration. MCICS provides impartial and fair services to all
+        its clients who are based both in Canada and outside of Canada. As of
+        now, MCICS does not charge money for the first hour (initial
+        consultation) of professional assessment services. MCICS’s top objective
+        is the satisfaction and success of its clients.",
+        "owner": "Mussie Tesfagiorgis is the owner and managing director of MCICS, and he
+        is a member in good standing of CICC (The College of Immigration and
+        Citizenship Consultants) – a regulatory authority which regulates all
+        the immigration consultants.",
+        "regulated_consultant": "Regulated Canadian Immigration Consultant",
+        "rcic": "Background on the RCIC",
+        "who_is_rcic": " Who is RCIC?",
+        "book_for_free": "Book a free appointment for",
+        "canadian_dream": "Canadian Dream"
+    },
+    "atlantic_immigration": {
+        "atlantic_immigration_programme": "Atlantic Immigration Program",
+        "prgram_details": [
+            "This program is specifically designed for employers seeking to directly employ qualified Foreign
+            Nationals without having to go through the Labour Market Impact Assessment (LMIA) process.
+            Employers make a direct offer of employment to a selected candidate. Once the candidate
+            accepts the offer, the employer connects them to settlement service providers (designated
+            organizations). After conducting a thorough needs assessment, the settlement service provider
+            develops a settlement plan for the candidate and their dependents (if applicable).",
+            "If the employer has an urgent need to fill their vacancy, they may choose to offer employment to
+            the candidate through a temporary work permit. It is the responsibility of the candidate to apply
+            for the work permit. Requirements for the temporary work permit application include, but are
+            not limited to, a valid job offer and a letter from the Province where the job is located. In
+            addition, the candidate must also confirm their intent that he/she would apply for permanent
+            residence status within 90 days after the application for the temporary work permit."
+        ],
+        "you_may_eligible": "You may be eligible for an open work permit if, among other classes, you are:",
+        "eligible_list": [
+            "The candidate must have work experience that qualifies them for the position. However,
+            if the candidate is a graduate student from a post-secondary institution in any part of
+            Atlantic Canada, he/she does not need to prove qualifying work experience",
+            "The candidate must meet the language criteria as set by the program",
+            "Unless living and working within Canada, the candidate must prove that he/she and their
+            dependents have sufficient settlement funds",
+        ],
+        "moses_canadian_immigration": "<b>Moses Canadian Immigration Consulting Services</b> can assist you in determining your
+        eligibility of immigration to Canada through this program.",
+        "clicking_here": "clicking here"
+    },
+    "express_entry": {
+        "title": "Express Entry",
+        "canada_manages": "Canada manages three main Economy Class streams through an
+        application management system known as the Express Entry program."
+
+    }
+}
