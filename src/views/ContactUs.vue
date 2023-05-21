@@ -53,14 +53,15 @@
             <div class="col-12 col-sm-6">
               <span
                 class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
-                >France</span
-              >
+              ></span>
               <p class="w-80 margin-5px-bottom lg-w-90">
-                27 Eden Walk Eden Centre, Orchard View, Paris, France
+                532 Sargent Ave., Winnipeg, Manitoba, R3B 1W2
               </p>
-              <span class="d-block margin-10px-bottom">Tel: 123 456 7890</span>
+              <span class="d-block margin-10px-bottom"
+                >Tel: +1 (204) 952-1631</span
+              >
               <a
-                href="https://www.google.com/maps?ll=-37.817214,144.955925&z=16&t=m&hl=en-US&gl=IN&mapclient=embed&cid=13153204942596594449"
+                href="https://goo.gl/maps/xhEaKrvti3uwshL19?coh=178571&entry=tt"
                 target="_blank"
                 class="text-uppercase text-small text-extra-dark-gray font-weight-500 text-decoration-line-bottom"
                 >View on google map</a
@@ -79,7 +80,7 @@
         <div class="col-12 col-lg-5 col-md-8 md-margin-50px-bottom">
           <div
             class="feature-box feature-box-left-icon-middle padding-4-rem-all bg-light-gray overflow-hidden background-position-top background-no-repeat lg-padding-3-rem-lr md-padding-5-rem-all xs-padding-3-half-rem-all"
-            style="background-image: url('images/quotes-01.png')"
+            style="background-image: url('images/quotes-01.png');"
           >
             <div
               class="feature-box-icon margin-25px-right xs-margin-15px-right"
@@ -166,8 +167,14 @@
         <div class="col-md-12 px-0">
           <div class="map-style-3 h-500px xs-h-300px">
             <iframe
-              class="w-100 h-100 filter-grayscale-100"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843821917424!2d144.956054!3d-37.817127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1427947693651"
+            class="w-100 h-100"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2570.1372989125484!2d-97.1553917!3d49.8962256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73e6ace960f9%3A0x53f75150a8b3d573!2s532%20Sargent%20Ave%2C%20Winnipeg%2C%20MB%20R3B%201W2%2C%20Canada!5e0!3m2!1sen!2sgh!4v1684705619649!5m2!1sen!2sgh"
+              width="600"
+              height="450"
+              style="border: 0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

@@ -59,9 +59,9 @@
               <li>
                 <router-link to="/contact">Contact Us</router-link>
               </li>
-              <li><a href="latest-news.html">Facebook</a></li>
-              <li><a href="our-story.html">Linkedin</a></li>
-              <li><a href="pricing-packages.html">Twitter</a></li>
+              <li><a href="javascript:void(0);">Facebook</a></li>
+              <li><a href="javascript:void(0);">Linkedin</a></li>
+              <li><a href="javascript:void(0);">Twitter</a></li>
             </ul>
           </div>
           <!-- end footer column -->

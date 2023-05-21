@@ -153,7 +153,7 @@ const megaLinks = ref([
   {
     id: 3,
     name: "Sponsorship",
-    link: "/sponsorship",
+    link: "#",
     show: false,
     submenu: [
       {
@@ -171,7 +171,7 @@ const megaLinks = ref([
   {
     id: 3,
     name: "Economy Class",
-    link: "/economy-class",
+    link: "#",
     show: false,
     submenu: [
       {
@@ -199,7 +199,7 @@ const megaLinks = ref([
   {
     id: 3,
     name: "Permit",
-    link: "/permit",
+    link: "#",
     show: false,
     submenu: [
       {
