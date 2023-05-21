@@ -40,6 +40,16 @@ const router = createRouter({
       component: () => import("../views/ExpressEntry.vue"),
     },
     {
+      path: "/why-immigration-consultant",
+      name: "why-immigration-consultant",
+      component: () => import("../views/WhyImmigrationConsultant.vue"),
+    },
+    {
+      path: "/beware-of-fraud",
+      name: "beware-of-fraud",
+      component: () => import("../views/BewareOfFraud.vue"),
+    },
+    {
       path: "/study-permit",
       name: "study-permit",
       component: () => import("../views/StudyPermit.vue"),

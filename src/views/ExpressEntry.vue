@@ -36,10 +36,6 @@
         <div
           class="col-12 col-lg-6 col-sm-8 text-center margin-6-rem-bottom md-margin-3-rem-bottom xs-margin-4-rem-bottom wow animate__fadeIn"
         >
-          <!-- <span
-            class="d-block margin-40px-bottom md-margin-25px-bottom xs-margin-15px-bottom"
-            ><img src="https://via.placeholder.com/150x78" alt=""
-          /></span> -->
           <h5
             class="alt-font text-extra-dark-gray font-weight-500 letter-spacing-minus-1px text-uppercase"
           >
