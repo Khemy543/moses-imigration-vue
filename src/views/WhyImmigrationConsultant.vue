@@ -36,7 +36,7 @@
         >
           <div class="row">
             <div
-              class="col-12 blog-details-text last-paragraph-no-margin margin-6-rem-bottom"
+              class="col-12 blog-details-text last-paragraph-no-margin"
               style="font-size: 17px;"
               >
               <p>
@@ -65,6 +65,6 @@
 </template>
 <style scoped>
 .family-header {
-  background-image: url(../assets/images/main/family-class.jpg);
+  background-image: url(../assets/images/main/consultation.jpg);
 }
 </style>
