@@ -309,6 +309,6 @@
 </template>
 <style scoped>
 .immigration-header {
-  background-image: url(../assets/images/main/free-assessment.jpg);
+  background-image: url("../assets/images/main/free-assessment.jpg");
 }
 </style>
