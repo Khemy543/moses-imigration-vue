@@ -59,7 +59,7 @@ a, a.nav-link, a:active, a:focus { color: #828282; }
 a, a.nav-link, .btn, input, textarea, select { transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; }
 img { max-width: 100%; height: auto; }
 video { background-size: cover; display: table-cell; vertical-align: middle; width: 100%; }
-p { margin: 0 0 25px; }
+p { margin: 0 0 25px; font-size: 17px;}
 b, strong { font-weight: 600; }
 .alt-font strong { font-weight: 600; }
 .last-paragraph-no-margin p:last-of-type { margin-bottom:0; }

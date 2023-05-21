@@ -263,7 +263,7 @@ const mouseleave = (index) => {
         <div
           class="col-12 text-center text-sm-start col-sm-auto me-auto ps-lg-0"
         >
-          <p class="text-medium m-0">
+          <p class="text-medium m-0" style="font-size: 14px;">
             Looking for more info, and would like to contact us?
             <RouterLink to="/free-assessment-form" class="navbar-brand"
               ><b
@@ -300,7 +300,7 @@ const mouseleave = (index) => {
               data-at2x="images/main/logo.png"
               class="default-logo"
               alt=""
-              style="max-height: 100px"
+              style="max-height: 100px; background-color: white;"
             />
             <!--  <img
               src="../assets/images/main/logo.png"

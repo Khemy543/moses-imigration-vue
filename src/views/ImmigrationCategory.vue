@@ -66,9 +66,9 @@
                 class="alt-font font-weight-500 margin-5px-bottom d-block text-medium-slate-blue"
                 >Economy Class</span
               >
-              <p class="w-85 xs-w-100">
+              <!-- <p class="w-85 xs-w-100">
                 Lorem ipsum dolor amet consectetur adipiscing elit
-              </p>
+              </p> -->
             </div>
           </div>
           <!-- end feature box item -->
@@ -89,9 +89,9 @@
                 class="alt-font font-weight-500 margin-5px-bottom d-block text-medium-slate-blue"
                 >Family Class</span
               >
-              <p class="w-85 xs-w-100">
+              <!-- <p class="w-85 xs-w-100">
                 Lorem ipsum dolor amet consectetur adipiscing elit
-              </p>
+              </p> -->
             </div>
           </div>
           <!-- end feature box item -->
@@ -112,9 +112,9 @@
                 class="alt-font font-weight-500 margin-5px-bottom d-block text-medium-slate-blue"
                 >Refugee Class</span
               >
-              <p class="w-85 xs-w-100">
+              <!-- <p class="w-85 xs-w-100">
                 Lorem ipsum dolor amet consectetur adipiscing elit
-              </p>
+              </p> -->
             </div>
           </div>
 
@@ -130,9 +130,9 @@
                 class="alt-font font-weight-500 margin-5px-bottom d-block text-medium-slate-blue"
                 >Temporary Residence Class</span
               >
-              <p class="w-85 xs-w-100">
+              <!-- <p class="w-85 xs-w-100">
                 Lorem ipsum dolor amet consectetur adipiscing elit
-              </p>
+              </p> -->
             </div>
           </div>
           <!-- end feature box item -->

@@ -35,10 +35,7 @@
           class="col-12 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom"
         >
           <div class="row">
-            <div
-              class="col-12 blog-details-text last-paragraph-no-margin"
-              style="font-size: 17px;"
-              >
+            <div class="col-12 blog-details-text last-paragraph-no-margin">
               <p>
                 Canadian Immigration consultants are important because they
                 provide valuable advice and assistance to those who are looking
@@ -65,6 +62,6 @@
 </template>
 <style scoped>
 .family-header {
-  background-image: url(../assets/images/main/consultation.jpg);
+  background-image: url("../assets/images/main/consultation.jpg");
 }
 </style>
