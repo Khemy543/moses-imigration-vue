@@ -34,7 +34,7 @@
         </div>
         <div class="col-12 col-lg-6 col-md-8">
           <div class="row">
-            <div class="col-12 col-sm-6 xs-margin-30px-bottom">
+            <!-- <div class="col-12 col-sm-6 xs-margin-30px-bottom">
               <span
                 class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
                 >London</span
@@ -49,7 +49,7 @@
                 class="text-uppercase text-small text-extra-dark-gray font-weight-500 text-decoration-line-bottom"
                 >View on google map</a
               >
-            </div>
+            </div> -->
             <div class="col-12 col-sm-6">
               <span
                 class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
