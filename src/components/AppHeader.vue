@@ -113,12 +113,12 @@ const megaLinks = ref([
       {
         id: 3,
         name: "Google Reviews",
-        link: "/google-reviews",
+        link: "#",
       },
       {
         id: 5,
         name: "Privacy policy",
-        link: "/privacy-policy",
+        link: "#",
       },
       {
         id: 6,
@@ -187,7 +187,7 @@ const megaLinks = ref([
       {
         id: 3,
         name: "Provincial Nominee Program",
-        link: "/provincial-nominee-program",
+        link: "#",
       },
       {
         id: 4,
