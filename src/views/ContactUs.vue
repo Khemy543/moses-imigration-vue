@@ -60,6 +60,9 @@
               <span class="d-block margin-10px-bottom"
                 >Tel: +1 (204) 952-1631</span
               >
+              <span class="d-block margin-10px-bottom"
+                >Email: mosesimmigration@gmail.com</span
+              >
               <a
                 href="https://goo.gl/maps/xhEaKrvti3uwshL19?coh=178571&entry=tt"
                 target="_blank"
@@ -183,11 +186,11 @@
   </section>
   <!-- end map section -->
   <!-- start section -->
-  <section class="half-section">
+  <!-- <section class="half-section">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center"> -->
         <!-- start feature box item-->
-        <div
+        <!-- <div
           class="col-12 col-sm-auto sm-margin-15px-bottom wow animate__fadeIn"
           data-wow-delay="0.2s"
         >
@@ -201,10 +204,10 @@
               >+1 123 456 7890</span
             >
           </div>
-        </div>
+        </div> -->
         <!-- end feature box item-->
         <!-- start feature box item-->
-        <div
+        <!-- <div
           class="col-12 col-sm-auto sm-margin-15px-bottom wow animate__fadeIn"
           data-wow-delay="0.4s"
         >
@@ -220,26 +223,21 @@
               >no-reply@domain.com</a
             >
           </div>
-        </div>
+        </div> -->
         <!-- end feature box item-->
         <!-- start feature box item-->
-        <div
+        <!-- <div
           class="col-12 col-sm-auto wow animate__fadeIn"
           data-wow-delay="0.6s"
         >
           <div
             class="d-flex justify-content-center align-items-center padding-15px-lr h-100"
           >
-            <i
-              class="feather icon-feather-globe align-middle icon-extra-small text-gradient-magenta-orange margin-10px-right"
-            ></i>
-            <a href="#" class="text-extra-dark-gray alt-font text-medium"
-              >www.yourdomain.com</a
-            >
+      
           </div>
-        </div>
+        </div> -->
         <!-- end feature box item-->
-      </div>
+      <!-- </div>
     </div>
-  </section>
+  </section> -->
 </template>
