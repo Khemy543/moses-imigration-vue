@@ -80,6 +80,6 @@
 </template>
 <style scoped>
 .family-header {
-  background-image: url("../assets/images/main/imigrationfraud.jpg");
+  background-image: url("../assets/images/main/privacy.jpg");
 }
 </style>

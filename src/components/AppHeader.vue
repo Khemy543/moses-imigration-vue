@@ -187,7 +187,7 @@ const megaLinks = ref([
       {
         id: 3,
         name: "Provincial Nominee Program",
-        link: "#",
+        link: "/provincial-nominee-program",
       },
       {
         id: 4,

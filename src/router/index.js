@@ -25,6 +25,16 @@ const router = createRouter({
       component: () => import("../views/PrivacyPolicy.vue"),
     },
     {
+      path: "/provincial-nominee-program",
+      name: "/provincial-nominee-program",
+      component: () => import("../views/PNP.vue"),
+    },
+    {
+      path: "/refugee-class",
+      name: "/refugee-class",
+      component: () => import("../views/RefugeeClass.vue"),
+    },
+    {
       path: "/free-assessment-form",
       name: "free-assessment-form",
       component: () => import("../views/FreeAssessmentForm.vue"),
