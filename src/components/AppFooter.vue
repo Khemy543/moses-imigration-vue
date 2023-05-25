@@ -109,10 +109,27 @@
           <div
             class="col-12 col-md-3 text-center text-md-start sm-margin-20px-bottom"
           >
-            <a href="/" class="footer-logo"
-              ><img src="../assets/images/main/logo.png" alt=""
-              style="max-height: 100px; height: 60px;"
-            /></a>
+            <RouterLink to="/" class="navbar-brand">
+            <img
+              src="../assets/images/main/logo.png"
+              data-at2x="images/main/logo.png"
+              class="default-logo"
+              alt=""
+              style="max-height: 100px; background-color: white;"
+            />
+            <!--  <img
+              src="../assets/images/main/logo.png"
+              data-at2x="images/main/logo.png"
+              class="alt-logo"
+              alt=""
+            />
+            <img
+              src="../assets/images/main/logo.png"
+              data-at2x="images/main/logo.png"
+              class="mobile-logo"
+              alt=""
+            /> -->
+          </RouterLink>
           </div>
           <div
             class="col-12 col-md-6 text-center last-paragraph-no-margin sm-margin-20px-bottom"

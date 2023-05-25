@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import("../views/ImmigrationCategory.vue"),
     },
     {
+      path: "/privacy-policy",
+      name: "privacy-policy",
+      component: () => import("../views/PrivacyPolicy.vue"),
+    },
+    {
       path: "/free-assessment-form",
       name: "free-assessment-form",
       component: () => import("../views/FreeAssessmentForm.vue"),

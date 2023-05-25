@@ -118,7 +118,7 @@ const megaLinks = ref([
       {
         id: 5,
         name: "Privacy policy",
-        link: "#",
+        link: "privacy-policy",
       },
       {
         id: 6,
