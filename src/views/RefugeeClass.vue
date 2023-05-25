@@ -165,6 +165,6 @@
 </template>
 <style scoped>
 .study-header {
-  background-image: url(../assets/images/main/study.jpg);
+  background-image: url(../assets/images/main/refug.jpg);
 }
 </style>
