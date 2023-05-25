@@ -26,21 +26,21 @@
             class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
           ></span>
           <p class="w-80 margin-5px-bottom lg-w-90">
-            <vue-feather type="map-pin" size="16"></vue-feather> 532 Sargent
+            <vue-feather style="margin-right: 20px;" type="map-pin" size="16"></vue-feather> 532 Sargent
             Ave., Winnipeg, Manitoba, R3B 1W2
           </p>
 
           <p></p>
 
           <p class="w-80 margin-5px-bottom lg-w-90">
-            <vue-feather type="phone-call" size="25"></vue-feather> +1 (204)
+            <vue-feather style="margin-right: 20px;" type="phone-call" size="16" ></vue-feather> +1 (204)
             952-1631
           </p>
 
           <p></p>
 
-          <p class="w-80 margin-5px-bottom lg-w-90">
-            <vue-feather class="ml-3" type="at-sign" size="20"></vue-feather>
+          <p class="w-100 margin-5px-bottom lg-w-90">
+            <vue-feather style="margin-right: 20px;" type="inbox" size="16"></vue-feather>
             <span>mosesimmigration@gmail.com</span>
           </p>
           <p></p>
