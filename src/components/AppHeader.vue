@@ -113,12 +113,12 @@ const megaLinks = ref([
       {
         id: 3,
         name: "Google Reviews",
-        link: "/google-reviews",
+        link: "#",
       },
       {
         id: 5,
         name: "Privacy policy",
-        link: "/privacy-policy",
+        link: "privacy-policy",
       },
       {
         id: 6,

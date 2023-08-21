@@ -1,80 +1,124 @@
 <template>
   <section class="bg-gradient-light-orange-light-pink">
+    <!-- <div class="opacity-extra-medium bg-extra-dark-gray"></div> -->
     <div class="container">
-      <div
-        class="d-flex flex-column flex-md-row justify-content-end extra-small-screen align-items-end"
-      >
-        <div class="w-100 w-md-50 page-title-extra-small">
-          <h1
-            class="alt-font text-extra-dark-gray position-relative padding-90px-left padding-15px-right sm-padding-55px-left mb-md-0 sm-margin-20px-bottom"
+      <div class="row align-items-stretch justify-content-center small-screen">
+        <div
+          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column"
+        >
+          <h3
+            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-30 sm-line-height-45 xs-line-height-30 no-margin-bottom"
           >
-            <span
-              class="page-title-separator-line bg-black w-70px sm-w-40px"
-            ></span
-            >Contact us modern
-          </h1>
-        </div>
-        <div class="w-100 w-md-50">
-          <h4 class="alt-font font-weight-500 text-extra-dark-gray mb-0">
-            We create brand new corporate identities
-          </h4>
+            Contact Us
+          </h3>
         </div>
       </div>
     </div>
   </section>
   <section>
     <div class="container">
-      <div class="row align-items-end">
-        <div class="col-12 col-lg-6 col-md-4 sm-margin-30px-bottom">
-          <h5
-            class="alt-font w-50 text-extra-dark-gray font-weight-500 mb-0 lg-w-65 md-w-100"
-          >
-            How can we help you today?
-          </h5>
-        </div>
-        <div class="col-12 col-lg-6 col-md-8">
-          <div class="row">
-            <!-- <div class="col-12 col-sm-6 xs-margin-30px-bottom">
-              <span
-                class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
-                >London</span
-              >
-              <p class="w-80 margin-5px-bottom lg-w-90">
-                401 Broadway, 24th Floor, Orchard View, London, UK
-              </p>
-              <span class="d-block margin-10px-bottom">Tel: 123 456 7890</span>
-              <a
-                href="https://www.google.com/maps?ll=-37.817214,144.955925&z=16&t=m&hl=en-US&gl=IN&mapclient=embed&cid=13153204942596594449"
-                target="_blank"
-                class="text-uppercase text-small text-extra-dark-gray font-weight-500 text-decoration-line-bottom"
-                >View on google map</a
-              >
-            </div> -->
-            <div class="col-12 col-sm-6">
-              <span
-                class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
-              ></span>
-              <p class="w-80 margin-5px-bottom lg-w-90">
-                532 Sargent Ave., Winnipeg, Manitoba, R3B 1W2
-              </p>
-              <span class="d-block margin-10px-bottom"
-                >Tel: +1 (204) 952-1631</span
-              >
-              <a
-                href="https://goo.gl/maps/xhEaKrvti3uwshL19?coh=178571&entry=tt"
-                target="_blank"
-                class="text-uppercase text-small text-extra-dark-gray font-weight-500 text-decoration-line-bottom"
-                >View on google map</a
-              >
-            </div>
+      <div class="row">
+        <div class="col-12 col-lg-6 col-md-6">
+          <h4 class="alt-font text-black font-weight-600">
+            Our Address
+          </h4>
+          <span
+            class="alt-font d-block text-extra-dark-gray font-weight-500 margin-10px-bottom"
+          ></span>
+          <p class="w-80 margin-5px-bottom lg-w-90">
+            <vue-feather style="margin-right: 20px;" type="map-pin" size="16"></vue-feather> 532 Sargent
+            Ave., Winnipeg, Manitoba, R3B 1W2
+          </p>
+
+          <p></p>
+
+          <p class="w-80 margin-5px-bottom lg-w-90">
+            <vue-feather style="margin-right: 20px;" type="phone-call" size="16" ></vue-feather> +1 (204)
+            952-1631
+          </p>
+
+          <p></p>
+
+          <p class="w-100 margin-5px-bottom lg-w-90">
+            <vue-feather style="margin-right: 20px;" type="inbox" size="16"></vue-feather>
+            <span>mosesimmigration@gmail.com</span>
+          </p>
+          <p></p>
+          <div class="text-left">
+            <a
+              href="https://goo.gl/maps/xhEaKrvti3uwshL19?coh=178571&entry=tt"
+              target="_blank"
+              class="text-uppercase text-small text-extra-dark-gray font-weight-500 text-decoration-line-bottom"
+              >View on google map</a
+            >
           </div>
+        </div>
+        <div class="col-12 col-lg-6 col-md-6">
+          <h4 class="alt-font text-black font-weight-600">
+            Let's get in touch with us
+          </h4>
+          <div v-if="sent" class="alert alert-info">
+            Hello <span class="text-primary">{{ name }}</span
+            >, We have received your mail.
+          </div>
+          <form
+            @submit.prevent="sendEnquiryMail"
+            class="alt-font text-extra-dark-gray"
+          >
+            <input
+              class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px required"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              v-model="name"
+            />
+            <input
+              v-model="email"
+              class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px required"
+              type="email"
+              name="email"
+              placeholder="Your email address"
+            />
+            <input
+              class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px"
+              type="tel"
+              name="phone"
+              placeholder="Mobile no"
+              v-model="phone"
+            />
+            <textarea
+              v-model="message"
+              class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-35px-bottom border-radius-0px"
+              name="comment"
+              rows="5"
+              placeholder="How can we help you?"
+            ></textarea>
+            <div
+              class="g-recaptcha margin-35px-bottom"
+              data-sitekey="6LfJf98bAAAAAGC26hfKyd2Ptddbs9xYm4mCNeLx"
+            ></div>
+            <input type="hidden" name="redirect" value="" />
+            <button
+              class="btn btn-medium btn-dark-gray mb-0 submit"
+              type="submit"
+            >
+              send message
+              <div v-if="isLoading" class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </button>
+            <div class="form-results d-none"></div>
+          </form>
         </div>
       </div>
     </div>
   </section>
   <!-- end section -->
   <!-- start section -->
-  <section class="big-section wow animate__fadeIn">
+  <!-- <section class="big-section wow animate__fadeIn">
     <div class="container">
       <div class="row align-items-end justify-content-center">
         <div class="col-12 col-lg-5 col-md-8 md-margin-50px-bottom">
@@ -92,11 +136,11 @@
               />
             </div>
             <div class="feature-box-content">
-              <!-- <div
+              <div
                 class="text-large text-extra-dark-gray alt-font font-weight-500 w-90"
               >
                 More comfortable talking with us?
-              </div> -->
+              </div>
             </div>
             <p class="margin-30px-top margin-15px-bottom w-80 lg-w-100">
               Schedule a 15 minute intro call with us. He'll answer your
@@ -108,14 +152,14 @@
               >Pick a schedule</a
             >
           </div>
-        </div>
-        <div class="col-12 col-lg-6 offset-lg-1 col-md-8">
+        </div> -->
+  <!-- <div class="col-12 col-lg-6 offset-lg-1 col-md-8">
           <h4 class="alt-font text-black font-weight-600">
             Let's get in touch with us
           </h4>
+          <div v-if="sent" class="alert alert-info">Hello <span class="text-primary">{{name}}</span>, We have received your mail.</div>
           <form
-            action="email-templates/contact-form.php"
-            method="post"
+            @submit.prevent="sendEnquiryMail"
             class="alt-font text-extra-dark-gray"
           >
             <input
@@ -123,8 +167,10 @@
               type="text"
               name="name"
               placeholder="Your name"
+              v-model="name"
             />
             <input
+              v-model="email"
               class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px required"
               type="email"
               name="email"
@@ -135,8 +181,10 @@
               type="tel"
               name="phone"
               placeholder="Mobile no"
+              v-model="phone"
             />
             <textarea
+            v-model="message"
               class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-35px-bottom border-radius-0px"
               name="comment"
               rows="5"
@@ -151,14 +199,14 @@
               class="btn btn-medium btn-dark-gray mb-0 submit"
               type="submit"
             >
-              send message
+              send message <div v-if="isLoading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </button>
             <div class="form-results d-none"></div>
           </form>
-        </div>
+        </div> 
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end section -->
   <!-- start map section -->
   <section class="no-padding-tb wow animate__fadeIn">
@@ -167,7 +215,7 @@
         <div class="col-md-12 px-0">
           <div class="map-style-3 h-500px xs-h-300px">
             <iframe
-            class="w-100 h-100"
+              class="w-100 h-100"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2570.1372989125484!2d-97.1553917!3d49.8962256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73e6ace960f9%3A0x53f75150a8b3d573!2s532%20Sargent%20Ave%2C%20Winnipeg%2C%20MB%20R3B%201W2%2C%20Canada!5e0!3m2!1sen!2sgh!4v1684705619649!5m2!1sen!2sgh"
               width="600"
               height="450"
@@ -183,11 +231,11 @@
   </section>
   <!-- end map section -->
   <!-- start section -->
-  <section class="half-section">
+  <!-- <section class="half-section">
     <div class="container">
-      <div class="row justify-content-center">
-        <!-- start feature box item-->
-        <div
+      <div class="row justify-content-center"> -->
+  <!-- start feature box item-->
+  <!-- <div
           class="col-12 col-sm-auto sm-margin-15px-bottom wow animate__fadeIn"
           data-wow-delay="0.2s"
         >
@@ -201,10 +249,10 @@
               >+1 123 456 7890</span
             >
           </div>
-        </div>
-        <!-- end feature box item-->
-        <!-- start feature box item-->
-        <div
+        </div> -->
+  <!-- end feature box item-->
+  <!-- start feature box item-->
+  <!-- <div
           class="col-12 col-sm-auto sm-margin-15px-bottom wow animate__fadeIn"
           data-wow-delay="0.4s"
         >
@@ -220,26 +268,105 @@
               >no-reply@domain.com</a
             >
           </div>
-        </div>
-        <!-- end feature box item-->
-        <!-- start feature box item-->
-        <div
+        </div> -->
+  <!-- end feature box item-->
+  <!-- start feature box item-->
+  <!-- <div
           class="col-12 col-sm-auto wow animate__fadeIn"
           data-wow-delay="0.6s"
         >
           <div
             class="d-flex justify-content-center align-items-center padding-15px-lr h-100"
           >
-            <i
-              class="feather icon-feather-globe align-middle icon-extra-small text-gradient-magenta-orange margin-10px-right"
-            ></i>
-            <a href="#" class="text-extra-dark-gray alt-font text-medium"
-              >www.yourdomain.com</a
-            >
+      
           </div>
-        </div>
-        <!-- end feature box item-->
-      </div>
+        </div> -->
+  <!-- end feature box item-->
+  <!-- </div>
     </div>
-  </section>
+  </section> -->
 </template>
+<script>
+import axios from "axios";
+
+export default {
+  name: "Contact",
+  data() {
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      isLoading: false,
+      sent: false,
+    };
+  },
+  methods: {
+    async sendEnquiryMail() {
+      this.isLoading = true;
+      const resp = await axios.post(
+        "https://core.mosesimmigration.com/api/send/immigration/enquiry/mail",
+        {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          message: this.message,
+        }
+      );
+
+      console.log("response", resp);
+
+      if (resp.data && resp.data.status === "mail sent") {
+        this.sent = true;
+        setTimeout(() => {
+          this.sent = false;
+          this.name = null;
+        }, 5000);
+
+        this.email = null;
+        this.message = null;
+        this.phone = null;
+        this.isLoading = false;
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  border: 5px solid #232323;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #232323 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

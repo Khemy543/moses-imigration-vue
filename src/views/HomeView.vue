@@ -652,7 +652,7 @@ onMounted(() => {
   </section>
 
   <!-- start section -->
-  <section class="bg-white">
+  <!-- <section class="bg-white">
     <div class="container">
       <div class="row justify-content-center">
         <div
@@ -673,7 +673,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 <style scoped>
 .hero-image {
