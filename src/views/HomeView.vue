@@ -1,6 +1,13 @@
 <script setup>
+import { sanity, builder } from "@/sanity.js";
 import { ref, onMounted } from "vue";
 import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
+
+const query = `*[_type == "home"]{
+  body,
+  title,
+  image
+}`;
 
 const categories = ref([
   {
@@ -112,6 +119,8 @@ const consultingServices = ref([
   },
 ]);
 
+const homePageData = ref([]);
+
 const openCollapse = (index) => {
   categories.value = categories.value.map((category) => ({
     ...category,
@@ -120,7 +129,26 @@ const openCollapse = (index) => {
   categories.value[index].collapsed = true;
 };
 
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      homePageData.value = data;
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
 onMounted(() => {
+  getPageData();
   new Swiper(".swiper-container", {
     modules: [Navigation, Pagination, Autoplay],
     slidesPerView: 1,
@@ -218,19 +246,14 @@ onMounted(() => {
           <h4
             class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-rem-bottom w-80 lg-w-90 md-margin-3-rem-bottom xs-margin-4-rem-bottom xs-w-100"
           >
-            Moses Canadian Immigration Consulting Services
-            <span
+            {{ homePageData?.[0]?.title }}
+            <!-- <span
               class="text-tussock text-decoration-line-bottom-thick font-weight-600"
               >(MCICS)</span
-            >
+            > -->
           </h4>
           <p class="w-70 margin-40px-bottom lg-w-90 md-margin-25px-bottom">
-            MCICS is a CICC registered Canadian immigration consulting firm
-            based in Winnipeg, Manitoba, Canada. It is run by a Regulated
-            Canadian Immigration Consultant (RCIC), registered and licensed
-            member of the College of Immigration and Citizenship Consultants
-            (CICC) in good standing. Through MCICS clients are best served in
-            various matters of Canadian immigration.
+            {{ homePageData?.[0]?.body }}
           </p>
 
           <div class="margin-40px-top d-inline-block md-margin-25px-top">
@@ -247,11 +270,7 @@ onMounted(() => {
         >
           <div class="position-relative">
             <div class="opacity-very-light bg-dark-slate-blue"></div>
-            <img
-              class="w-100"
-              src="../assets/images/main/passport.jpg"
-              alt=""
-            />
+            <img class="w-100" :src="urlFor(homePageData?.[0]?.image)" alt="" />
             <a
               href="https://www.youtube.com/watch?v=g0f_BRYJLJE"
               class="popup-youtube absolute-middle-center video-icon-box video-icon-double-large left-0px"

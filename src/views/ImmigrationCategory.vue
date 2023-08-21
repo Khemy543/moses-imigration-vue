@@ -270,27 +270,25 @@
 
   <section class="">
     <div class="container">
-      <div
-        class="row align-items-center overlap-gap-section"
-      >
+      <div class="row align-items-center overlap-gap-section">
         <div class="col-12 col-lg-6 col-md-10 ps-lg-0">
           <h5 class="alt-font text-extra-dark-gray font-weight-500">
             Temporary Residence Class
           </h5>
           <p>
-            This class is concerned with temporary residence visa (as
-            authorized by the visa officer at the Port of Entry). The most
-            popular permits in this category are Super Visa, Visitors’ Visa and
-            Tourist Visa. Again, Canada is among the very few countries next to
-            the U.S.A. which allows visit of, among others, parents and
-            grandparents to their permanent resident or Canadian Citizen
-            Children. Parents or grandparents whose children are living in
-            Canada as Permanent Residents or Citizens are allowed to come to
-            Canada as temporary residents so long they meet the requirements. In
-            addition, Canada, as among the most naturally rich countries of the
-            world, it welcomes tourists, visitors or anyone who would love to
-            transit through Canada. Therefore, temporary residence visa
-            comprises part of the most important immigration streams.
+            This class is concerned with temporary residence visa (as authorized
+            by the visa officer at the Port of Entry). The most popular permits
+            in this category are Super Visa, Visitors’ Visa and Tourist Visa.
+            Again, Canada is among the very few countries next to the U.S.A.
+            which allows visit of, among others, parents and grandparents to
+            their permanent resident or Canadian Citizen Children. Parents or
+            grandparents whose children are living in Canada as Permanent
+            Residents or Citizens are allowed to come to Canada as temporary
+            residents so long they meet the requirements. In addition, Canada,
+            as among the most naturally rich countries of the world, it welcomes
+            tourists, visitors or anyone who would love to transit through
+            Canada. Therefore, temporary residence visa comprises part of the
+            most important immigration streams.
           </p>
         </div>
         <div
@@ -307,6 +305,40 @@
     </div>
   </section>
 </template>
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "economy-class"]{
+  body,
+  title,
+  image
+}`;
+
+const pageContent = ref([]);
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      pageContent.value = data;
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <style scoped>
 .immigration-header {
   background-image: url("../assets/images/main/free-assessment.jpg");

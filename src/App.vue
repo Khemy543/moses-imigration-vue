@@ -1,4 +1,5 @@
 <script setup>
+// import { useSanityClient } from "vue-sanity";
 import { RouterView } from "vue-router";
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
@@ -13,6 +14,14 @@ import AppFooter from "./components/AppFooter.vue";
   document.head.appendChild(jquery);
   document.head.appendChild(themeVendors);
   document.head.appendChild(mainjs);
+}); */
+
+/* useSanityClient({
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  dataset: "production",
+  apiVersion: "2021-10-21",
+  token: import.meta.env.VITE_SANITY_API_TOKEN,
+  useCdn: import.meta.env.NODE_ENV === "production",
 }); */
 </script>
 
