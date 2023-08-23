@@ -133,7 +133,7 @@ const getPageData = () => {
   sanity
     .fetch(query)
     .then((data) => {
-      homePageData.value = data;
+      homePageData.value = data.find(item => item.title === 'Moses Canadian Immigration Consulting Services (MCICS)');
     })
     .then((error) => {
       console.log(error);
@@ -246,15 +246,13 @@ onMounted(() => {
           <h4
             class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-rem-bottom w-80 lg-w-90 md-margin-3-rem-bottom xs-margin-4-rem-bottom xs-w-100"
           >
-            {{ homePageData?.[0]?.title }}
-            <!-- <span
+            {{ homePageData?.title.replace('(MCICS)', '') }}
+            <span
               class="text-tussock text-decoration-line-bottom-thick font-weight-600"
               >(MCICS)</span
-            > -->
+            >
           </h4>
-          <p class="w-70 margin-40px-bottom lg-w-90 md-margin-25px-bottom">
-            {{ homePageData?.[0]?.body }}
-          </p>
+          <p class="w-70 margin-40px-bottom lg-w-90 md-margin-25px-bottom" v-for="body in homePageData.body" :key="homePageData._key">{{ body?.children[0].text }}</p>
 
           <div class="margin-40px-top d-inline-block md-margin-25px-top">
             <router-link
@@ -270,7 +268,7 @@ onMounted(() => {
         >
           <div class="position-relative">
             <div class="opacity-very-light bg-dark-slate-blue"></div>
-            <img class="w-100" :src="urlFor(homePageData?.[0]?.image)" alt="" />
+            <img class="w-100" :src="urlFor(homePageData?.image)" alt="" />
             <a
               href="https://www.youtube.com/watch?v=g0f_BRYJLJE"
               class="popup-youtube absolute-middle-center video-icon-box video-icon-double-large left-0px"
