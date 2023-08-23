@@ -1,3 +1,39 @@
+<script setup>
+import { sanity, builder } from "@/sanity.js";
+import { ref, onMounted } from "vue";
+
+const query = `*[_type == "about-us"]{
+  body,
+  title,
+  image
+}`;
+
+
+const aboutData = ref([]);
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      aboutData.value = data.find(item => item.title === 'Why Immigration Consultant');
+      console.log('about data', aboutData.value)
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
   <section class="parallax family-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -12,7 +48,8 @@
           <h3
             class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
           >
-            Why Immigration Consultant
+            <!-- Why Immigration Consultant -->
+            {{ aboutData?.title }}
           </h3>
         </div>
         <div class="down-section text-center">
@@ -37,7 +74,7 @@
           <div class="row">
             <div class="col-12 blog-details-text last-paragraph-no-margin">
               <p>
-                Canadian Immigration consultants are important because they
+                <!-- Canadian Immigration consultants are important because they
                 provide valuable advice and assistance to those who are looking
                 to immigrate to, and/or study, visit or work in Canada. They can
                 help individuals and families understand the immigration
@@ -51,7 +88,8 @@
                 helping to ensure that all necessary documents are submitted
                 correctly and on time. Finally, they can provide support and
                 guidance throughout the entire process, from the initial
-                application to the final decision.
+                application to the final decision. -->
+                {{ aboutData?.body }}
               </p>
             </div>
           </div>

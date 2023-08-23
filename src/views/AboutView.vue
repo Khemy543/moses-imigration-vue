@@ -1,3 +1,46 @@
+<script setup>
+import { sanity, builder } from "@/sanity.js";
+import { ref, onMounted } from "vue";
+
+const query = `*[_type == "about-us"]{
+  body,
+  title,
+  image
+}`;
+
+
+const aboutData = ref([]);
+const mcics = ref([])
+const rcicBackgournd = ref([])
+const whoIsRcis = ref([])
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      aboutData.value = data;
+      mcics.value = aboutData.value.find(item => item.title === 'MCICS')
+      rcicBackgournd.value = aboutData.value.find(item => item.title === 'Background on the RCIC')
+      whoIsRcis.value = aboutData.value.find(item => item.title === 'Who is RCIC?')
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+
+onMounted(() => {
+  getPageData();
+
+});
+</script>
 <template>
   <section class="parallax about-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -30,7 +73,7 @@
   <section id="about" class="">
     <div class="container">
       <p>
-        MCICS is a CICC registered Canadian immigration consulting firm based in
+        <!-- MCICS is a CICC registered Canadian immigration consulting firm based in
         Winnipeg, Manitoba, Canada. It is run by a Regulated Canadian
         Immigration Consultant (RCIC), registered and licensed member of the
         College of Immigration and Citizenship Consultants (CICC) in good
@@ -45,7 +88,8 @@
         Mussie Tesfagiorgis is the owner and managing director of MCICS, and he
         is a member in good standing of CICC (The College of Immigration and
         Citizenship Consultants) – a regulatory authority which regulates all
-        the immigration consultants.
+        the immigration consultants. -->
+          {{ mcics?.body }}
       </p>
     </div>
   </section>
@@ -69,11 +113,11 @@
   <section class="wow animate__fadeIn">
     <div class="container">
       <h5 class="alt-font text-extra-dark-gray font-weight-500">
-        Background on the RCIC
+            {{ rcicBackgournd?.title }}
       </h5>
 
       <p>
-        Prior to becoming RCIC, Mussie Tesfagiorgis, served as an academic and
+        <!-- Prior to becoming RCIC, Mussie Tesfagiorgis, served as an academic and
         professional in various fields and has widely published monographs and
         academic articles on various subjects. He has a Ph.D. (Doctor of
         Philosophy) and worked as a professor for over ten years and taught
@@ -82,7 +126,8 @@
         researcher on matters of immigration and integration for several
         countries and agencies in the course of the last 15 years. As an RCIC,
         he is a highly dedicated consultant who prioritizes the utmost
-        satisfaction and success of his clients.
+        satisfaction and success of his clients. -->
+        {{ rcicBackgournd?.body }}
       </p>
     </div>
   </section>
@@ -107,13 +152,15 @@
           <h4
             class="alt-font font-weight-600 text-white letter-spacing-minus-1px w-65 margin-2-half-rem-bottom xl-w-100"
           >
-            Who is RCIC?
+            {{ whoIsRcis?.title }}
           </h4>
           <p class="w-60 xl-w-100" style="color: white">
-            Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod
+            <!-- Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod
             tempor incididunt ut labore dolore magna utenim minim veniam nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
+            consequat. -->
+
+              {{ whoIsRcis?.body}}
           </p>
         </div>
       </div>

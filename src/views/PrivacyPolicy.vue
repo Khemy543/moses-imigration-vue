@@ -1,3 +1,38 @@
+<script setup>
+import { sanity, builder } from "@/sanity.js";
+import { ref, onMounted } from "vue";
+
+const query = `*[_type == "about-us"]{
+  body,
+  title,
+  image
+}`;
+
+
+const aboutData = ref([]);
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      aboutData.value = data.find(item => item.title === 'Privacy Policy');
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
   <section class="parallax family-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -12,7 +47,8 @@
           <h3
             class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
           >
-            Privacy Policy
+            <!-- Privacy Policy -->
+            {{ aboutData?.title }}
           </h3>
         </div>
         <div class="down-section text-center">
@@ -39,7 +75,7 @@
               class="col-12 blog-details-text last-paragraph-no-margin"
               style="font-size: 17px;"
             >
-              <p>
+              <!-- <p>
                 Information that is submitted to MCICS is held in the strictest
                 confidence possible. Client information is only used to provide
                 an assessment by us to determine eligibility, and to make
@@ -70,7 +106,9 @@
                 law. When your personal information is no longer necessary for
                 these purposes, we securely destroy or de-identify your personal
                 information.
-              </p>
+              </p> -->
+
+              {{ aboutData?.body }}
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@
               type="arrow-down"
               stroke="#bf8c4c"
               size="24"
-            ></vue-feather
+            ></vue-feathergit p
           ></a>
         </div>
       </div>

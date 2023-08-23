@@ -1,3 +1,37 @@
+<script setup>
+import { sanity, builder } from "@/sanity.js";
+import { ref, onMounted } from "vue";
+
+const query = `*[_type == "about-us"]{
+  body,
+  title,
+  image
+}`;
+
+const aboutData = ref([]);
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      aboutData.value = data.find(item => item.title === 'Beware of Fraud');
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
   <section class="parallax family-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -12,7 +46,8 @@
           <h3
             class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
           >
-            Beware Of Fraud
+            <!-- Beware Of Fraud -->
+            {{ aboutData?.title }}
           </h3>
         </div>
         <div class="down-section text-center">
@@ -39,7 +74,7 @@
               class="col-12 blog-details-text last-paragraph-no-margin"
               style="font-size: 17px;"
             >
-              <p>
+              <!-- <p>
                 Immigration fraud is a serious crime that can have serious
                 consequences for those who are victims of it. It is important to
                 be aware of the potential for fraud when dealing with
@@ -61,7 +96,9 @@
                 upfront. Be sure to research any immigration service provider
                 you are considering using, and make sure they are legitimate and
                 trustworthy.
-              </p>
+              </p> -->
+
+              {{ aboutData?.body }}
             </div>
           </div>
         </div>
