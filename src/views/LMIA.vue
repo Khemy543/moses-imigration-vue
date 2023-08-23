@@ -1,3 +1,42 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "permit"]{
+  body,
+  title,
+  image
+}`;
+
+const permit = ref([])
+
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      permit.value = data.find(item => item.title === 'Labour Market Impact Assessment (LMIA)');
+      // sponsorIncome.value = data.find(item => item.title === 'Sponsor Income Requirements');
+      // familyReunion.value = data.find(item => item.title === 'We believe in the reunification of all family members');
+
+      console.log('data', data)
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
     <section
       class="parallax"
@@ -31,8 +70,23 @@
     <section id="assessment-form" class="">
       <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-xl-10 col-lg-10 col-md-10">
-                <p>
+            <!-- <div class="col-12 col-xl-10 col-lg-10 col-md-10"> -->
+                <div v-for="body in permit.body" :key="permit._key">
+                  <p v-if="body._type === 'block'">
+                    <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+                      <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                      <li v-else>{{ body.children[0].text }}</li>
+                    </ul>
+
+                    <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                      <span v-if="child._type === 'span'">
+                        <b v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</b>
+                        <span v-else>{{ child.text }}</span>
+                      </span>
+                    </span>
+                  </p>
+                </div>
+                <!-- <p>
                   The LMIA-based work permit is normally acquired through a two-step application
                   process, as follows: <br><br>
                   <b>Step 1:</b> The employer meets the eligibility requirements and submits an LMIA application
@@ -111,8 +165,8 @@
                   >clicking here</RouterLink
                   >.</p>
                 </div>
-            </div>
-            </div>
+            </div> -->
+            <!-- </div> -->
       </div>
       </div>
     </section>

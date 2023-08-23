@@ -108,7 +108,7 @@ onMounted(() => {
                 information.
               </p> -->
 
-              {{ aboutData?.body }}
+              <p v-for="body in aboutData.body" :key="aboutData._key">{{ body?.children[0].text }}</p>
             </div>
           </div>
         </div>

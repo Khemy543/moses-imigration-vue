@@ -73,7 +73,7 @@ onMounted(() => {
         >
           <div class="row">
             <div class="col-12 blog-details-text last-paragraph-no-margin">
-              <p>
+              <!-- <p> -->
                 <!-- Canadian Immigration consultants are important because they
                 provide valuable advice and assistance to those who are looking
                 to immigrate to, and/or study, visit or work in Canada. They can
@@ -89,8 +89,10 @@ onMounted(() => {
                 correctly and on time. Finally, they can provide support and
                 guidance throughout the entire process, from the initial
                 application to the final decision. -->
-                {{ aboutData?.body }}
-              </p>
+                <!-- {{ aboutData?.body }} -->
+              <!-- </p> -->
+
+              <p v-for="body in aboutData.body" :key="aboutData._key">{{ body?.children[0].text }}</p>
             </div>
           </div>
         </div>

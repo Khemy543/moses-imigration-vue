@@ -1,3 +1,42 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "permit"]{
+  body,
+  title,
+  image
+}`;
+
+const permit = ref([])
+
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      permit.value = data.find(item => item.title === 'Open Work Permit');
+      // sponsorIncome.value = data.find(item => item.title === 'Sponsor Income Requirements');
+      // familyReunion.value = data.find(item => item.title === 'We believe in the reunification of all family members');
+
+      console.log('data', data)
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
   <section class="parallax work" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -28,7 +67,22 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-xl-10 col-lg-10 col-md-10">
-          <p>
+            <div v-for="body in permit.body" :key="permit._key">
+             
+                <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                  <li v-else>{{ body.children[0].text }}</li>
+                </ul>
+              <p v-if="body._type === 'block'">
+                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                  <span v-if="child._type === 'span'">
+                    <h6 style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</h6>
+                    <span v-else>{{ child.text }}</span>
+                  </span>
+                </span>
+              </p>
+            </div>
+          <!-- <p>
             Holders of open work permits can work for any employer and in any
             occupation of their choice, which is different than an LMIA-based
             work permit that only authorizes work for a specific employer. If
@@ -92,7 +146,7 @@
                 >clicking here</RouterLink
               >
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

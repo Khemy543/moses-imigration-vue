@@ -1,3 +1,43 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "sponsorship"]{
+  body,
+  title,
+  image
+}`;
+
+const minRequirement = ref([])
+const sponsorIncome = ref([])
+const familyReunion = ref([])
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      minRequirement.value = data.find(item => item.title === 'Minimum Requirements');
+      sponsorIncome.value = data.find(item => item.title === 'Sponsor Income Requirements');
+      familyReunion.value = data.find(item => item.title === 'We believe in the reunification of all family members');
+
+      console.log('data', data)
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
   <section class="parallax family-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -41,14 +81,15 @@
               <h5
                 class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom"
               >
-                We believe in the reunification of all family members
+                <!-- We believe in the reunification of all family members -->
+                {{ familyReunion.title }}
               </h5>
               <!-- <img
                 src="https://via.placeholder.com/780x500"
                 alt=""
                 class="w-100 border-radius-6px margin-4-half-rem-bottom"
               /> -->
-              <p>
+              <!-- <p>
                 The main intent of the Canadian family class immigration program
                 is to reunite Canadian citizens and permanent residents with
                 close members of their family. As stated in the Immigration and
@@ -68,13 +109,15 @@
                 support that are essential for the sponsored person in
                 resettling in Canada, the system allows family members to
                 immigrate to Canada.
-              </p>
+              </p> -->
+
+                <p v-for="body in familyReunion.body" :key="familyReunion._key">{{ body?.children[0].text }}</p>
 
               <h5
                 class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom"
                 style="margin-top: 80px"
               >
-                Minimum Requirements
+                {{ minRequirement.title }}
               </h5>
 
               <h6
@@ -84,7 +127,7 @@
                 1. The Sponsor
               </h6>
 
-              <div class="" style="margin-left: 30px">
+              <!-- <div class="" style="margin-left: 30px">
                 <ul>
                   <li>
                     Must be a Canadian Citizen or Permanent Resident of Canada
@@ -145,7 +188,23 @@
                 member (for example, a sister, niece, or uncle) in Canada, the
                 regulation allows some exceptions so that you can sponsor such
                 relatives as sister, brother, niece or uncle.
+              </p> -->
+
+            <div v-for="body in minRequirement.body" :key="minRequirement._key">
+              <p v-if="body._type === 'block'">
+                <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                  <li v-else>{{ body.children[0].text }}</li>
+                </ul>
+
+                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                  <span v-if="child._type === 'span'">
+                    <b v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</b>
+                    <span v-else>{{ child.text }}</span>
+                  </span>
+                </span>
               </p>
+            </div>
             </div>
           </div>
         </div>

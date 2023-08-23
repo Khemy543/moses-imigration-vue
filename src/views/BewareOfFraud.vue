@@ -97,8 +97,7 @@ onMounted(() => {
                 you are considering using, and make sure they are legitimate and
                 trustworthy.
               </p> -->
-
-              {{ aboutData?.body }}
+              <p v-for="body in aboutData.body" :key="aboutData._key">{{ body?.children[0].text }}</p>
             </div>
           </div>
         </div>

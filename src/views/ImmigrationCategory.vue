@@ -1,3 +1,45 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "immigration-category"]{
+  body,
+  title,
+  image
+}`;
+
+const refugeeClass = ref([])
+const tempResidence = ref([])
+const economyClass = ref([])
+const familyClass = ref([])
+const immigCat = ref([])
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      refugeeClass.value = data.find(item => item.title === 'Refugee Class');
+      tempResidence.value = data.find(item => item.title === 'Temporary Residence Class');
+      economyClass.value = data.find(item => item.title === 'Economy Class');
+      familyClass.value = data.find(item => item.title === 'Family Class');
+      immigCat.value = data.find(item => item.title === 'Canadian Immigration Category');
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
   <section
     class="parallax immigration-header"
@@ -30,10 +72,7 @@
   <section class="overlap-height md-no-padding-top xs-padding-40px-top">
     <div class="container">
       <p>
-        Canada has various pathways of immigration that are suitable ways of
-        immigration to many people from across the world. Therefore, Canada has
-        many streams of immigration, but among the most popular streams of
-        immigration are the following:
+         <p v-for="body in immigCat.body" :key="immigCat._key">{{ body?.children[0].text }}</p>
       </p>
       <div
         class="row align-items-center justify-content-center overlap-gap-section"
@@ -61,7 +100,7 @@
                 stroke="#bf8c4c"
               ></vue-feather>
             </div>
-            <div class="feature-box-content last-paragraph-no-margin">
+            <div class="feature-box-content last-parsee hereagraph-no-margin">
               <span
                 class="alt-font font-weight-500 margin-5px-bottom d-block text-medium-slate-blue"
                 >Economy Class</span
@@ -144,10 +183,10 @@
   <section class="bg-seashell">
     <div class="container">
       <h5 class="alt-font text-extra-dark-gray font-weight-500">
-        Economy Classes
+        {{ economyClass.title }}
       </h5>
-      <div>
-        <p>
+      <!-- <div> -->
+        <!-- <p>
           Skilled Worker Programs: These programs comprise various Federal and
           Provincial programs that are aimed at admitting qualified and
           experienced skilled workers from different parts of the world. At the
@@ -189,8 +228,22 @@
           here: https://immigratemanitoba.com/immigrate-to-manitoba/), the
           province has Skilled Worker Program, International Education, and
           Business Program.
-        </p>
-      </div>
+        </p> -->
+        <div v-for="body in economyClass.body" :key="economyClass._key">
+          <p v-if="body._type === 'block'">
+            <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+              <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+              <li v-else>{{ body.children[0].text }}</li>
+            </ul>
+
+            <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+              <span v-if="child._type === 'span'">
+                <b v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</b>
+                <span v-else>{{ child.text }}</span>
+              </span>
+            </span>
+          </p>
+        </div>
     </div>
   </section>
   <section class="">
@@ -232,7 +285,7 @@
       <h5 class="alt-font text-extra-dark-gray font-weight-500">
         Refugee Class
       </h5>
-      <p>
+      <!-- <p>
         Canada has a very generous system of refugee sponsorship programs. This
         program is designed to help Canadian families to sponsor and bring their
         loved ones to live in the healthy and peaceful environment Canadian
@@ -263,7 +316,8 @@
         desperate to save their loved ones from the shackles of desperation,
         persecution, refugee camps that are infested with outlaws (such as human
         traffickers), and more.
-      </p>
+      </p> -->
+      <p v-for="body in refugeeClass.body" :key="refugeeClass._key">{{ body?.children[0].text }}</p>
     </div>
   </section>
 
@@ -272,9 +326,9 @@
       <div class="row align-items-center overlap-gap-section">
         <div class="col-12 col-lg-6 col-md-10 ps-lg-0">
           <h5 class="alt-font text-extra-dark-gray font-weight-500">
-            Temporary Residence Class
+            {{ tempResidence.title }}
           </h5>
-          <p>
+          <!-- <p>
             This class is concerned with temporary residence visa (as authorized
             by the visa officer at the Port of Entry). The most popular permits
             in this category are Super Visa, Visitors’ Visa and Tourist Visa.
@@ -288,7 +342,8 @@
             tourists, visitors or anyone who would love to transit through
             Canada. Therefore, temporary residence visa comprises part of the
             most important immigration streams.
-          </p>
+          </p> -->
+          <p v-for="body in tempResidence.body" :key="tempResidence._key">{{ body?.children[0].text }}</p>
         </div>
         <div
           class="col-12 col-lg-6 col-md-10 text-center text-lg-end md-margin-30px-bottom wow animate__fadeIn"
@@ -304,40 +359,6 @@
     </div>
   </section>
 </template>
-<script setup>
-import { onMounted, ref } from "vue";
-import { sanity, builder } from "@/sanity.js";
-
-const query = `*[_type == "economy-class"]{
-  body,
-  title,
-  image
-}`;
-
-const pageContent = ref([]);
-
-const getPageData = () => {
-  sanity
-    .fetch(query)
-    .then((data) => {
-      pageContent.value = data;
-    })
-    .then((error) => {
-      console.log(error);
-    });
-};
-
-const urlFor = (source) => {
-  if (source) {
-    return builder.image(source);
-  }
-  return "";
-};
-
-onMounted(() => {
-  getPageData();
-});
-</script>
 <style scoped>
 .immigration-header {
   background-image: url("../assets/images/main/free-assessment.jpg");

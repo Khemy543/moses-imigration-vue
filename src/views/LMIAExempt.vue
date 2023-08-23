@@ -1,3 +1,40 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "permit"]{
+  body,
+  title,
+  image
+}`;
+
+const permit = ref([])
+
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      permit.value = data.find(item => item.title === 'Labour Market Impact Assessment (LMIA) Exempt Work Permit');
+
+      console.log('data', data)
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
 <template>
     <section
       class="parallax"
@@ -31,8 +68,25 @@
     <section id="assessment-form" class="">
       <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-xl-10 col-lg-10 col-md-10">
-                <p>
+          
+          <div v-for="body in permit.body" :key="permit._key">
+            <p v-if="body._type === 'block'">
+              <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+                <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                <li v-else>{{ body.children[0].text }}</li>
+              </ul>
+
+              <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                <span v-if="child._type === 'span'">
+                  <h6 style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</h6>
+                  <span v-else>{{ child.text }}</span>
+                </span>
+              </span>
+            </p>
+          </div>
+            <!-- <div class="col-12 col-xl-10 col-lg-10 col-md-10"> -->
+
+                <!-- <p>
                   In certain circumstances, Foreign Nationals (workers) may obtain a work permit without LMIA
                   approval (exemption). Where an LMIA exemption applies, it is possible for the Foreign National
                   to be issued a work permit that allows them to work in Canada for a specific period.
@@ -64,8 +118,8 @@
                   class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom"
                 >clicking here</RouterLink>
               </p>
-              <p>Please contact us if you have any questions or require more information.</p>
-            </div>
+              <p>Please contact us if you have any questions or require more information.</p> -->
+            <!-- </div> -->
       </div>
       </div>
     </section>

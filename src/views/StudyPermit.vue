@@ -1,3 +1,43 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { sanity, builder } from "@/sanity.js";
+
+const query = `*[_type == "permit"]{
+  body,
+  title,
+  image
+}`;
+
+const permit = ref([])
+
+
+const getPageData = () => {
+  sanity
+    .fetch(query)
+    .then((data) => {
+      permit.value = data.find(item => item.title === 'Study Permit');
+      // sponsorIncome.value = data.find(item => item.title === 'Sponsor Income Requirements');
+      // familyReunion.value = data.find(item => item.title === 'We believe in the reunification of all family members');
+
+      console.log('data', data)
+    })
+    .then((error) => {
+      console.log(error);
+    });
+};
+
+const urlFor = (source) => {
+  if (source) {
+    return builder.image(source);
+  }
+  return "";
+};
+
+onMounted(() => {
+  getPageData();
+});
+</script>
+
 <template>
   <section class="parallax study-header" data-parallax-background-ratio="0.5">
     <div class="opacity-extra-medium bg-extra-dark-gray"></div>
@@ -28,7 +68,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12">
-          <p>
+          <!-- <p>
             Students who wish to pursue an education in Canada will be admitted
             by a Designated Learning Institution (DLI). Most Foreign Nationals
             will also require a study permit. To learn more about DLI’s,
@@ -190,7 +230,23 @@
               to access the assessment form. Please contact us if you have any
               questions or require more information.
             </p>
-          </div>
+          </div> -->
+
+            <div v-for="body in permit.body" :key="permit._key">
+                <p v-if="body._type === 'block'">
+                  <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+                    <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                    <li v-else>{{ body.children[0].text }}</li>
+                  </ul>
+
+                  <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                    <span v-if="child._type === 'span'">
+                      <h5 style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</h5>
+                      <span v-else>{{ child.text }}</span>
+                    </span>
+                  </span>
+                </p>
+              </div>
         </div>
       </div>
     </div>
