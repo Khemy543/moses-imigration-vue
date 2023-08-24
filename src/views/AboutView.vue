@@ -134,7 +134,7 @@ onMounted(() => {
   <!-- end section -->
 
   <!-- start section -->
-  <section class="p-0 bg-extra-dark-gray wow animate__fadeIn">
+  <!-- <section class="p-0 bg-extra-dark-gray wow animate__fadeIn">
     <div class="container-fluid">
       <div class="row">
         <div
@@ -154,18 +154,18 @@ onMounted(() => {
           >
             {{ whoIsRcis?.title }}
           </h4>
-          <p class="w-60 xl-w-100" style="color: white">
+          <p class="w-60 xl-w-100" style="color: white"> -->
             <!-- Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod
             tempor incididunt ut labore dolore magna utenim minim veniam nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. -->
 
-              {{ whoIsRcis?.body}}
+              <!-- {{ whoIsRcis?.body}}
           </p>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end section -->
 
   <!-- start section -->
