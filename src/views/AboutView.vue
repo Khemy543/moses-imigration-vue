@@ -89,13 +89,14 @@ onMounted(() => {
         is a member in good standing of CICC (The College of Immigration and
         Citizenship Consultants) – a regulatory authority which regulates all
         the immigration consultants. -->
-          {{ mcics?.body }}
+          <!-- {{ mcics?.body }} -->
       </p>
+      <p class="" v-for="body in mcics.body" :key="mcics._key">{{ body?.children[0].text }}</p>
     </div>
   </section>
   <!-- end section -->
 
-  <section class="bg-light-gray wow animate__fadeIn">
+  <section class="bg-dark-gray wow animate__fadeIn">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-lg-6 col-sm-8">
@@ -112,11 +113,11 @@ onMounted(() => {
   <!-- start section -->
   <section class="wow animate__fadeIn">
     <div class="container">
-      <h5 class="alt-font text-extra-dark-gray font-weight-500">
+      <h5 class="alt-font font-weight-500 text-center" style="color: #bf8c4c" >
             {{ rcicBackgournd?.title }}
       </h5>
 
-      <p>
+      <!-- <p> -->
         <!-- Prior to becoming RCIC, Mussie Tesfagiorgis, served as an academic and
         professional in various fields and has widely published monographs and
         academic articles on various subjects. He has a Ph.D. (Doctor of
@@ -127,8 +128,25 @@ onMounted(() => {
         countries and agencies in the course of the last 15 years. As an RCIC,
         he is a highly dedicated consultant who prioritizes the utmost
         satisfaction and success of his clients. -->
-        {{ rcicBackgournd?.body }}
-      </p>
+        <!-- {{ rcicBackgournd?.body }} -->
+      <!-- </p> -->
+      <!-- <p class="" v-for="body in rcicBackgournd.body" :key="rcicBackgournd._key">{{ body?.children[0].text }}</p> -->
+         <div v-for="body in rcicBackgournd.body" :key="rcicBackgournd._key">
+              <p v-if="body._type === 'block'">
+                <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                  <li v-else>{{ body.children[0].text }}</li>
+                </ul>
+
+                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                  <span v-if="child._type === 'span'">
+                    <span style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</span>
+                    <span v-else>{{ child.text }}</span>
+                  </span>
+                </span>
+              </p>
+            </div>
+
     </div>
   </section>
   <!-- end section -->
@@ -169,10 +187,10 @@ onMounted(() => {
   <!-- end section -->
 
   <!-- start section -->
-  <section class="wow animate__fadeIn">
+  <!-- <section class="wow animate__fadeIn">
     <div class="container">
       <div
-        class="bg-medium-light-gray margin-6-rem-bottom margin-3-rem-top w-100 h-1px"
+        class="bg-medium-light-gray margin-6-rem-bottom  w-100 h-1px"
       ></div>
       <div class="row align-items-center justify-content-center">
         <div
@@ -198,7 +216,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <style>
