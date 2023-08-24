@@ -321,7 +321,7 @@ onMounted(() => {
     </div>
   </section>
 
-  <section class="">
+  <section class="" id="temp-residence">
     <div class="container">
       <div class="row align-items-center overlap-gap-section">
         <div class="col-12 col-lg-6 col-md-10 ps-lg-0">

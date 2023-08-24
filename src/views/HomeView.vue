@@ -15,24 +15,28 @@ const categories = ref([
     title: "Economy Class",
     description: "",
     collapsed: true,
+    url: '/express-entry'
   },
   {
     id: 2,
     title: "Family Class",
     description: "",
     collapsed: false,
+    url: '/family-class-sponsership'
   },
   {
     id: 3,
     title: "Refugee Class",
     description: "",
     collapsed: false,
+    url: '/refugee-class'
   },
   {
     id: 4,
     title: "Temporary Residence Class",
     description: "",
     collapsed: false,
+    url: '/immigration-categories#temp-residence'
   },
 ]);
 
@@ -514,7 +518,7 @@ onMounted(() => {
                   :class="{ collapsed: cat.collapsed }"
                   data-bs-toggle="collapse"
                   :data-bs-parent="`#accordion${cat.id}`"
-                  href="#collapseFive"
+                  :href="cat.url"
                   aria-expanded="false"
                   @click="openCollapse(index)"
                 >
