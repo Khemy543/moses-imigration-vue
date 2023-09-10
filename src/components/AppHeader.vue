@@ -296,8 +296,8 @@ const mouseleave = (index) => {
         <div class="col-6 col-lg-2 me-auto ps-lg-0">
           <RouterLink to="/" class="navbar-brand">
             <img
-              src="../assets/images/main/logo.png"
-              data-at2x="images/main/logo.png"
+              src="../assets/images/main/newlogo.jpeg"
+              data-at2x="images/main/newlogo.jpeg"
               class="default-logo"
               alt=""
               style="max-height: 100px; background-color: white;"

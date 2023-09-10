@@ -213,7 +213,7 @@ onMounted(() => {
         >
           <h5 class="alt-font text-white font-weight-300 m-0">
             Book a free appointment for your dream of living in
-            <span class="font-weight-600">Canadian Permanently</span>
+            <span class="font-weight-600">Canada Permanently</span>
           </h5>
         </div>
         <div class="col-3 p-0 h-100 d-none d-xl-inline-block">
@@ -479,6 +479,7 @@ onMounted(() => {
           <h4
             class="alt-font text-white font-weight-600 margin-45px-bottom sm-margin-25px-bottom"
           >
+          <!-- remove this section later -->
             Get inspired by ideas and insights to help you get business
           </h4>
           <span class="text-white alt-font text-uppercase letter-spacing-2px"
