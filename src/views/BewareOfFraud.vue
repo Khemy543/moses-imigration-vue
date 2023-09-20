@@ -16,7 +16,7 @@ const getPageData = () => {
     .then((data) => {
       aboutData.value = data.find(item => item.title === 'Beware of Fraud');
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };

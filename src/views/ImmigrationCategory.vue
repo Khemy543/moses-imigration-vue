@@ -22,9 +22,9 @@ const getPageData = () => {
       tempResidence.value = data.find(item => item.title === 'Temporary Residence Class');
       economyClass.value = data.find(item => item.title === 'Economy Class');
       familyClass.value = data.find(item => item.title === 'Family Class');
-      immigCat.value = data.find(item => item.title === 'Canadian Immigration Category');
+      immigCat.value = data.find(item => item.title === 'Canadian Immigration Categories');
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };

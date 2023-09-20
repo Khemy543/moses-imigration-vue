@@ -100,7 +100,7 @@ onMounted(() => {
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-lg-6 col-sm-8">
-          <h5 class="alt-font text-extra-dark-gray font-weight-500">
+          <h5 class="alt-font text-extra-dark-gray font-weight-500 text-center">
             Regulated Canadian Immigration Consultant
           </h5>
         </div>

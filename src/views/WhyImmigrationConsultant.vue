@@ -15,10 +15,10 @@ const getPageData = () => {
   sanity
     .fetch(query)
     .then((data) => {
-      aboutData.value = data.find(item => item.title === 'Why Immigration Consultant');
+      aboutData.value = data.find(item => item.title === 'Why Use an Immigration Consultant?');
       console.log('about data', aboutData.value)
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -48,7 +48,6 @@ onMounted(() => {
           <h3
             class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
           >
-            <!-- Why Immigration Consultant -->
             {{ aboutData?.title }}
           </h3>
         </div>

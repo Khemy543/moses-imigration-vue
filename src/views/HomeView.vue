@@ -124,6 +124,7 @@ const consultingServices = ref([
 ]);
 
 const homePageData = ref([]);
+const title = ref([])
 
 const openCollapse = (index) => {
   categories.value = categories.value.map((category) => ({
@@ -138,8 +139,9 @@ const getPageData = () => {
     .fetch(query)
     .then((data) => {
       homePageData.value = data.find(item => item.title === 'Moses Canadian Immigration Consulting Services (MCICS)');
+      title.value = homePageData.value.title.replace('(MCICS)', '')
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -250,7 +252,7 @@ onMounted(() => {
           <h4
             class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-rem-bottom w-80 lg-w-90 md-margin-3-rem-bottom xs-margin-4-rem-bottom xs-w-100"
           >
-            {{ homePageData?.title.replace('(MCICS)', '') }}
+            {{ title }}
             <span
               class="text-tussock text-decoration-line-bottom-thick font-weight-600"
               >(MCICS)</span
