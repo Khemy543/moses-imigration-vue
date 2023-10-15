@@ -21,7 +21,7 @@ const getPageData = () => {
 
       console.log('data', data)
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };

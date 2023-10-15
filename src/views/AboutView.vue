@@ -23,7 +23,7 @@ const getPageData = () => {
       rcicBackgournd.value = aboutData.value.find(item => item.title === 'Background on the RCIC')
       whoIsRcis.value = aboutData.value.find(item => item.title === 'Who is RCIC?')
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -47,24 +47,18 @@ onMounted(() => {
     <div class="container">
       <div class="row align-items-stretch justify-content-center small-screen">
         <div
-          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column"
-        >
+          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column">
           <h1 class="alt-font text-white opacity-6 margin-20px-bottom">
             About
           </h1>
           <h3
-            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
-          >
+            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">
             Moses Canadian Immigration Consulting Services (MCICS)
           </h3>
         </div>
         <div class="down-section text-center">
           <a href="#about" class="section-link">
-            <vue-feather
-              type="arrow-down"
-              stroke="#bf8c4c"
-              size="24"
-            ></vue-feather>
+            <vue-feather type="arrow-down" stroke="#bf8c4c" size="24"></vue-feather>
           </a>
         </div>
       </div>
@@ -89,7 +83,7 @@ onMounted(() => {
         is a member in good standing of CICC (The College of Immigration and
         Citizenship Consultants) – a regulatory authority which regulates all
         the immigration consultants. -->
-          <!-- {{ mcics?.body }} -->
+        <!-- {{ mcics?.body }} -->
       </p>
       <p class="" v-for="body in mcics.body" :key="mcics._key">{{ body?.children[0].text }}</p>
     </div>
@@ -113,12 +107,12 @@ onMounted(() => {
   <!-- start section -->
   <section class="wow animate__fadeIn">
     <div class="container">
-      <h5 class="alt-font font-weight-500 text-center" style="color: #bf8c4c" >
-            {{ rcicBackgournd?.title }}
+      <h5 class="alt-font font-weight-500 text-center" style="color: #bf8c4c">
+        {{ rcicBackgournd?.title }}
       </h5>
 
       <!-- <p> -->
-        <!-- Prior to becoming RCIC, Mussie Tesfagiorgis, served as an academic and
+      <!-- Prior to becoming RCIC, Mussie Tesfagiorgis, served as an academic and
         professional in various fields and has widely published monographs and
         academic articles on various subjects. He has a Ph.D. (Doctor of
         Philosophy) and worked as a professor for over ten years and taught
@@ -128,24 +122,27 @@ onMounted(() => {
         countries and agencies in the course of the last 15 years. As an RCIC,
         he is a highly dedicated consultant who prioritizes the utmost
         satisfaction and success of his clients. -->
-        <!-- {{ rcicBackgournd?.body }} -->
+      <!-- {{ rcicBackgournd?.body }} -->
       <!-- </p> -->
       <!-- <p class="" v-for="body in rcicBackgournd.body" :key="rcicBackgournd._key">{{ body?.children[0].text }}</p> -->
-         <div v-for="body in rcicBackgournd.body" :key="rcicBackgournd._key">
-              <p v-if="body._type === 'block'">
-                <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
-                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
-                  <li v-else>{{ body.children[0].text }}</li>
-                </ul>
+      <div v-for="body in rcicBackgournd.body" :key="rcicBackgournd._key">
+        <p v-if="body._type === 'block'">
+        <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+          <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a
+              style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{
+                body.children[0]?.text }}</a></li>
+          <li v-else>{{ body.children[0].text }}</li>
+        </ul>
 
-                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
-                  <span v-if="child._type === 'span'">
-                    <span style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</span>
-                    <span v-else>{{ child.text }}</span>
-                  </span>
-                </span>
-              </p>
-            </div>
+        <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+          <span v-if="child._type === 'span'">
+            <span style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text
+            }}</span>
+            <span v-else>{{ child.text }}</span>
+          </span>
+        </span>
+        </p>
+      </div>
 
     </div>
   </section>
@@ -173,12 +170,12 @@ onMounted(() => {
             {{ whoIsRcis?.title }}
           </h4>
           <p class="w-60 xl-w-100" style="color: white"> -->
-            <!-- Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod
+  <!-- Lorem ipsum dolor sit amet consectetur adipiscing elitdo eiusmod
             tempor incididunt ut labore dolore magna utenim minim veniam nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. -->
 
-              <!-- {{ whoIsRcis?.body}}
+  <!-- {{ whoIsRcis?.body}}
           </p>
         </div>
       </div>

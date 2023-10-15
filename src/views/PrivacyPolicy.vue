@@ -17,7 +17,7 @@ const getPageData = () => {
     .then((data) => {
       aboutData.value = data.find(item => item.title === 'Privacy Policy');
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -39,25 +39,19 @@ onMounted(() => {
     <div class="container">
       <div class="row align-items-stretch justify-content-center small-screen">
         <div
-          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column"
-        >
+          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column">
           <h1 class="alt-font text-white opacity-6 margin-20px-bottom">
             About
           </h1>
           <h3
-            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
-          >
+            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">
             <!-- Privacy Policy -->
             {{ aboutData?.title }}
           </h3>
         </div>
         <div class="down-section text-center">
           <a href="#about" class="section-link">
-            <vue-feather
-              type="arrow-down"
-              stroke="#bf8c4c"
-              size="24"
-            ></vue-feather>
+            <vue-feather type="arrow-down" stroke="#bf8c4c" size="24"></vue-feather>
           </a>
         </div>
       </div>
@@ -67,14 +61,9 @@ onMounted(() => {
   <section class="blog-right-side-bar">
     <div class="container">
       <div class="row justify-content-center">
-        <div
-          class="col-12 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom"
-        >
+        <div class="col-12 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom">
           <div class="row">
-            <div
-              class="col-12 blog-details-text last-paragraph-no-margin"
-              style="font-size: 17px;"
-            >
+            <div class="col-12 blog-details-text last-paragraph-no-margin" style="font-size: 17px;">
               <!-- <p>
                 Information that is submitted to MCICS is held in the strictest
                 confidence possible. Client information is only used to provide

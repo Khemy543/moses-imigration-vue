@@ -22,7 +22,7 @@ const getPageData = () => {
 
       console.log('data', data)
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -44,24 +44,18 @@ onMounted(() => {
     <div class="container">
       <div class="row align-items-stretch justify-content-center small-screen">
         <div
-          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column"
-        >
+          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column">
           <h1 class="alt-font text-white opacity-6 margin-20px-bottom">
             Services
           </h1>
           <h3
-            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
-          >
+            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">
             Family Class Sponsorship
           </h3>
         </div>
         <div class="down-section text-center">
           <a href="#about" class="section-link">
-            <vue-feather
-              type="arrow-down"
-              stroke="#bf8c4c"
-              size="24"
-            ></vue-feather>
+            <vue-feather type="arrow-down" stroke="#bf8c4c" size="24"></vue-feather>
           </a>
         </div>
       </div>
@@ -71,16 +65,10 @@ onMounted(() => {
   <section class="blog-right-side-bar">
     <div class="container">
       <div class="row justify-content-center">
-        <div
-          class="col-12 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom"
-        >
+        <div class="col-12 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom">
           <div class="row">
-            <div
-              class="col-12 blog-details-text last-paragraph-no-margin margin-6-rem-bottom"
-            >
-              <h5
-                class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom"
-              >
+            <div class="col-12 blog-details-text last-paragraph-no-margin margin-6-rem-bottom">
+              <h5 class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom">
                 <!-- We believe in the reunification of all family members -->
                 {{ familyReunion.title }}
               </h5>
@@ -111,19 +99,13 @@ onMounted(() => {
                 immigrate to Canada.
               </p> -->
 
-                <p v-for="body in familyReunion.body" :key="familyReunion._key">{{ body?.children[0].text }}</p>
+              <p v-for="body in familyReunion.body" :key="familyReunion._key">{{ body?.children[0].text }}</p>
 
-              <h5
-                class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom"
-                style="margin-top: 80px"
-              >
+              <h5 class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom" style="margin-top: 80px">
                 {{ minRequirement.title }}
               </h5>
 
-              <h6
-                style="font-size: 20px"
-                class="alt-font font-weight-500 text-extra-dark-gray"
-              >
+              <h6 style="font-size: 20px" class="alt-font font-weight-500 text-extra-dark-gray">
                 1. The Sponsor
               </h6>
 
@@ -190,21 +172,24 @@ onMounted(() => {
                 relatives as sister, brother, niece or uncle.
               </p> -->
 
-            <div v-for="body in minRequirement.body" :key="minRequirement._key">
-              <p v-if="body._type === 'block'">
+              <div v-for="body in minRequirement.body" :key="minRequirement._key">
+                <p v-if="body._type === 'block'">
                 <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
-                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
+                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a
+                      style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{
+                        body.children[0]?.text }}</a></li>
                   <li v-else>{{ body.children[0].text }}</li>
                 </ul>
 
-                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key"
+                  class="mt-3">
                   <span v-if="child._type === 'span'">
                     <b v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</b>
                     <span v-else>{{ child.text }}</span>
                   </span>
                 </span>
-              </p>
-            </div>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -231,10 +216,7 @@ onMounted(() => {
         <div>
           <div>
             <div>
-              <h5
-                class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom"
-                style="margin-top: 80px"
-              >
+              <h5 class="alt-font font-weight-500 text-extra-dark-gray margin-4-half-rem-bottom" style="margin-top: 80px">
                 Sponsor Income Requirements
               </h5>
 
@@ -266,21 +248,15 @@ onMounted(() => {
               <p>
                 Then, you will have to meet or exceed the Low Income Cut-off
                 (LICO) –
-                <a
-                  href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5482-instruction-fill-financial-evaluation-form-1283.html"
+                <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5482-instruction-fill-financial-evaluation-form-1283.html"
                   target="_blank"
-                  class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom"
-                  >Click here</a
-                >
+                  class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom">Click here</a>
                 to see LICO table.
               </p>
 
               <p>Spousal or common-law partnership Sponsorship</p>
 
-              <h6
-                style="font-size: 20px"
-                class="alt-font font-weight-500 text-extra-dark-gray"
-              >
+              <h6 style="font-size: 20px" class="alt-font font-weight-500 text-extra-dark-gray">
                 1. There are two types of spousal or common-law sponsorship
                 applications:
               </h6>
@@ -308,8 +284,7 @@ onMounted(() => {
               </ul>
 
               <blockquote
-                class="alt-font border-width-4px border-color-fast-blue margin-60px-left pe-0 margin-5-half-rem-tb md-margin-40px-left sm-no-margin-left wow animate__fadeIn"
-              >
+                class="alt-font border-width-4px border-color-fast-blue margin-60px-left pe-0 margin-5-half-rem-tb md-margin-40px-left sm-no-margin-left wow animate__fadeIn">
                 <ul>
                   <li>
                     The marriage must be valid under the law of the country
@@ -327,9 +302,7 @@ onMounted(() => {
                     law.
                   </li>
                 </ul>
-                <footer
-                  class="text-medium text-fast-blue d-inline-block text-uppercase"
-                >
+                <footer class="text-medium text-fast-blue d-inline-block text-uppercase">
                   Note
                 </footer>
               </blockquote>
@@ -339,11 +312,9 @@ onMounted(() => {
                 your spouse, common-law partner or conjugal partner? Please
                 contact us by
 
-                <RouterLink
-                  to="/free-assessment-form"
-                  class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom"
-                  >clicking here</RouterLink
-                >
+                <RouterLink to="/free-assessment-form"
+                  class="btn btn-fancy btn-small btn-dark-gray margin-5px-right xs-margin-10px-bottom">clicking here
+                </RouterLink>
 
                 and find out if you are eligible under the Family Sponsorship
                 Program

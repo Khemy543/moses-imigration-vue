@@ -21,7 +21,7 @@ const getPageData = () => {
 
       console.log('data', data)
     })
-    .then((error) => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -43,22 +43,15 @@ onMounted(() => {
     <div class="container">
       <div class="row align-items-stretch justify-content-center small-screen">
         <div
-          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column"
-        >
+          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column">
           <h3
-            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
-          >
+            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">
             Open Work Permit
           </h3>
         </div>
         <div class="down-section text-center">
-          <a href="#assessment-form" class="section-link"
-            ><vue-feather
-              type="arrow-down"
-              stroke="#bf8c4c"
-              size="24"
-            ></vue-feather
-          ></a>
+          <a href="#assessment-form" class="section-link"><vue-feather type="arrow-down" stroke="#bf8c4c"
+              size="24"></vue-feather></a>
         </div>
       </div>
     </div>
@@ -67,21 +60,24 @@ onMounted(() => {
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-xl-10 col-lg-10 col-md-10">
-            <div v-for="body in permit.body" :key="permit._key">
-             
-                <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
-                  <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{ body.children[0]?.text }}</a></li>
-                  <li v-else>{{ body.children[0].text }}</li>
-                </ul>
-              <p v-if="body._type === 'block'">
-                <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
-                  <span v-if="child._type === 'span'">
-                    <h6 style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}</h6>
-                    <span v-else>{{ child.text }}</span>
-                  </span>
+          <div v-for="body in permit.body" :key="permit._key">
+
+            <ul v-if="body.hasOwnProperty('listItem') && body.listItem === 'bullet'">
+              <li v-if="body.markDefs.length > 0 && body.markDefs[0].hasOwnProperty('href')"><a
+                  style="text-decoration: underline; color: blue;" target="_blank" :href="body.markDefs[0]?.href">{{
+                    body.children[0]?.text }}</a></li>
+              <li v-else>{{ body.children[0].text }}</li>
+            </ul>
+            <p v-if="body._type === 'block'">
+              <span v-if="!body.hasOwnProperty('listItem')" v-for="child in body.children" :key="child._key" class="mt-3">
+                <span v-if="child._type === 'span'">
+                  <h6 style="color: #bf8c4c" v-if="child.marks.length > 0 && child.marks[0] === 'strong'">{{ child.text }}
+                  </h6>
+                  <span v-else>{{ child.text }}</span>
                 </span>
-              </p>
-            </div>
+              </span>
+            </p>
+          </div>
           <!-- <p>
             Holders of open work permits can work for any employer and in any
             occupation of their choice, which is different than an LMIA-based
