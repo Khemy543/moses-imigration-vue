@@ -1,44 +1,31 @@
 <script setup>
-import { sanity, builder } from "@/sanity.js";
-import { ref, onMounted } from "vue";
+import { sanity } from "@/sanity.js";
+import { ref, onMounted, computed } from "vue";
 import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 
+//components
+import HeroSection from "../components/Home/HeroSection.vue";
+import HomeAboutSection from "../components/Home/HomeAboutSection.vue";
+import HomeImmigrationCategories from "../components/Home/HomeImmigrationCategories.vue";
+
+const allComponents = {
+  HeroSection,
+  HomeAboutSection,
+  HomeImmigrationCategories,
+};
+
 const query = `*[_type == "home"]{
+  myId,
   body,
   title,
-  image
+  image,
+  description,
+  subtitle,
+  backimage,
+  component,
+  externalLink,
+  list
 }`;
-
-const categories = ref([
-  {
-    id: 1,
-    title: "Economy Class",
-    description: "",
-    collapsed: true,
-    url: '/express-entry'
-  },
-  {
-    id: 2,
-    title: "Family Class",
-    description: "",
-    collapsed: false,
-    url: '/family-class-sponsership'
-  },
-  {
-    id: 3,
-    title: "Refugee Class",
-    description: "",
-    collapsed: false,
-    url: '/refugee-class'
-  },
-  {
-    id: 4,
-    title: "Temporary Residence Class",
-    description: "",
-    collapsed: false,
-    url: '/immigration-categories#temp-residence'
-  },
-]);
 
 const consultingServices = ref([
   {
@@ -124,34 +111,21 @@ const consultingServices = ref([
 ]);
 
 const homePageData = ref([]);
-const title = ref([])
-
-const openCollapse = (index) => {
-  categories.value = categories.value.map((category) => ({
-    ...category,
-    collapsed: false,
-  }));
-  categories.value[index].collapsed = true;
-};
 
 const getPageData = () => {
   sanity
     .fetch(query)
     .then((data) => {
-      homePageData.value = data.find(item => item.title === 'Moses Canadian Immigration Consulting Services (MCICS)');
-      title.value = homePageData.value.title.replace('(MCICS)', '')
+      homePageData.value = data;
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
-const urlFor = (source) => {
-  if (source) {
-    return builder.image(source);
-  }
-  return "";
-};
+const pageData = computed(() =>
+  homePageData.value.sort((a, b) => Number(a.myId) - Number(b.myId))
+);
 
 onMounted(() => {
   getPageData();
@@ -176,124 +150,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="p-0 cover-background overlap-height hero-image">
-    <div class="opacity-very-light bg-dark-slate-blue"></div>
-    <div class="container position-relative">
-      <div class="row full-screen md-h-800px sm-h-500px">
-        <div
-          class="col-12 col-xl-6 col-lg-6 col-md-7 col-sm-10 d-flex flex-column justify-content-center"
-        >
-          <h2
-            class="alt-font text-white line-height-65px font-weight-500 letter-spacing-minus-1px margin-65px-bottom sm-line-height-50px sm-margin-25px-bottom"
-          >
-            We provide services related to different categories of Canadian
-            Immigration
-          </h2>
-          <div
-            class="alt-font text-medium font-weight-500 text-uppercase letter-spacing-2px d-flex"
-          >
-            <span
-              class="w-40px h-1px bg-tussock align-self-center margin-25px-right"
-            ></span
-            ><span class="text-tussock">Solution for your business</span>
-          </div>
-
-          <img
-            src="../assets/images/main/client.jpeg"
-            alt=""
-            style="margin-top: 20px"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="d-flex flex-row justify-content-end ms-auto w-700px position-absolute right-0px bottom-0px z-index-1 sm-position-relative sm-w-100"
-    >
-      <div class="row align-items-center justify-content-end mx-0 w-100">
-        <div
-          class="col-12 col-sm-9 align-items-center d-flex bg-tussock h-100 padding-3-rem-tb padding-5-rem-lr xs-padding-3-rem-lr"
-        >
-          <h5 class="alt-font text-white font-weight-300 m-0">
-            Book a free appointment for your dream of living in
-            <span class="font-weight-600">Canada Permanently</span>
-          </h5>
-        </div>
-        <div class="col-3 p-0 h-100 d-none d-xl-inline-block">
-          <RouterLink
-            to="/free-assessment-form"
-            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"
-          >
-            <vue-feather
-              type="arrow-right"
-              stroke="#bf8c4c"
-              size="40"
-            ></vue-feather>
-          </RouterLink>
-          <!--          <a-->
-          <!--            href="contact-us-classic.html"-->
-          <!--            class="text-center align-items-center d-flex justify-content-center bg-seashell h-100"-->
-          <!--          >-->
-          <!--            <vue-feather-->
-          <!--              type="arrow-right"-->
-          <!--              stroke="#bf8c4c"-->
-          <!--              size="40"-->
-          <!--            ></vue-feather>-->
-          <!--          </a>-->
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="home-consulting big-section cover-background">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div
-          class="col-12 col-lg-6 col-md-10 md-margin-5-rem-bottom wow animate__fadeIn"
-        >
-          <h4
-            class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-rem-bottom w-80 lg-w-90 md-margin-3-rem-bottom xs-margin-4-rem-bottom xs-w-100"
-          >
-            {{ title }}
-            <span
-              class="text-tussock text-decoration-line-bottom-thick font-weight-600"
-              >(MCICS)</span
-            >
-          </h4>
-          <p class="w-70 margin-40px-bottom lg-w-90 md-margin-25px-bottom" v-for="body in homePageData.body" :key="homePageData._key">{{ body?.children[0].text }}</p>
-
-          <div class="margin-40px-top d-inline-block md-margin-25px-top">
-            <router-link
-              to="/about-us"
-              class="btn btn-fancy btn-small btn-dark-gray margin-35px-right xs-margin-10px-bottom"
-              >Read more</router-link
-            >
-          </div>
-        </div>
-        <div
-          class="col-12 col-lg-5 offset-lg-1 col-md-10 wow animate__fadeIn"
-          data-wow-delay="0.2s"
-        >
-          <div class="position-relative">
-            <div class="opacity-very-light bg-dark-slate-blue"></div>
-            <img class="w-100" :src="urlFor(homePageData?.image)" alt="" />
-            <a
-              href="https://www.youtube.com/watch?v=g0f_BRYJLJE"
-              class="popup-youtube absolute-middle-center video-icon-box video-icon-double-large left-0px"
-            >
-              <span>
-                <span class="video-icon bg-white box-shadow-large">
-                  <vue-feather
-                    type="play"
-                    stroke="#bf8c4c"
-                    size="40"
-                  ></vue-feather>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <template v-for="item in pageData" :key="item.myId">
+    <component :is="allComponents[item.component]" :content="item" />
+  </template>
   <section class="p-0">
     <div class="container-fluid padding-eight-lr lg-padding-15px-lr">
       <div
@@ -455,237 +314,8 @@ onMounted(() => {
       </div>
     </div>
   </section>
-
-  <section class="parallax big-section" data-parallax-background-ratio="0.2">
-    <div class="opacity-full bg-gradient-tussock-greenish-slate"></div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div
-          class="col-12 col-xl-7 col-lg-8 col-sm-10 position-relative text-center overlap-gap-section wow animate__fadeIn"
-          data-wow-delay="0.2s"
-        >
-          <a
-            href="https://www.youtube.com/watch?v=vWPkPdbAPuM"
-            target="_blank"
-            class="popup-youtube video-icon-box video-icon-large position-relative d-inline-block margin-3-half-rem-bottom"
-          >
-            <span>
-              <span class="video-icon bg-white">
-                <vue-feather type="play" size="24"></vue-feather>
-                <span class="video-icon-sonar"
-                  ><span class="video-icon-sonar-afr bg-white"></span
-                ></span>
-              </span>
-            </span>
-          </a>
-          <h4
-            class="alt-font text-white font-weight-600 margin-45px-bottom sm-margin-25px-bottom"
-          >
-          <!-- remove this section later -->
-            Get inspired by ideas and insights to help you get business
-          </h4>
-          <span class="text-white alt-font text-uppercase letter-spacing-2px"
-            >Unlimited power and customization</span
-          >
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="bg-white py-lg-0">
-    <div class="container">
-      <div class="row align-items-center">
-        <div
-          class="col-12 col-xl-6 col-lg-6 col-md-10 padding-6-rem-tb lg-padding-5-rem-tb lg-padding-2-half-rem-right md-padding-15px-right md-no-padding-tb md-margin-5-rem-bottom"
-        >
-          <h5
-            class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-half-rem-bottom w-75 md-margin-4-rem-bottom lg-margin-2-half-rem-bottom md-w-100 wow animate__fadeIn"
-          >
-            We provide different categories of canadian imigration
-          </h5>
-          <div
-            class="panel-group accordion-event accordion-style-03 margin-4-rem-bottom lg-margin-2-rem-bottom"
-            id="accordion2"
-            data-active-icon="fa-angle-down"
-            data-inactive-icon="fa-angle-right"
-          >
-            <!-- start accordion item -->
-            <div
-              v-for="(cat, index) in categories"
-              :key="cat.id"
-              class="panel bg-white box-shadow-small border-radius-5px wow animate__fadeIn"
-              data-wow-delay="0.2s"
-            >
-              <div class="panel-heading active-accordion">
-                <a
-                  class="accordion-toggle"
-                  :class="{ collapsed: cat.collapsed }"
-                  data-bs-toggle="collapse"
-                  :data-bs-parent="`#accordion${cat.id}`"
-                  :href="cat.url"
-                  aria-expanded="false"
-                  @click="openCollapse(index)"
-                >
-                  <div class="panel-title">
-                    <span
-                      class="alt-font text-extra-dark-gray d-inline-block font-weight-500"
-                    >
-                      {{ cat.title }}</span
-                    >
-                    <!-- <vue-feather
-                      type="arrow-down"
-                      stroke="#bf8c4c"
-                      size="20"
-                    ></vue-feather> -->
-                  </div>
-                </a>
-              </div>
-              <!-- 
-              <div
-                id="collapseFive"
-                class="panel-collapse collapse"
-                :class="{ show: cat.collapsed }"
-                :data-bs-parent="`#accordion${cat.id}`"
-              >
-                <div class="panel-body">
-                  Lorem ipsum is simply dummy text of the printing and
-                  typesetting industry lorem ipsum has been.
-                </div>
-              </div> -->
-            </div>
-            <!-- end accordion item -->
-          </div>
-          <p class="m-0 wow animate__fadeIn" data-wow-delay="0.8s">
-            Looking for more information?
-            <router-link
-              to="/immigration-categories"
-              class="text-extra-dark-gray text-tussock-hover font-weight-500 text-decoration-line-bottom"
-              >Click here</router-link
-            >
-          </p>
-        </div>
-        <div
-          class="col-12 col-xl-6 col-lg-6 col-md-10 wow animate__fadeInRight"
-        >
-          <div class="outside-box-right position-relative">
-            <img
-              src="../assets/images/main/city-2.jpg"
-              class="overflow-hidden"
-              alt=""
-              style="width: 100%; height: 900px; object-fit: cover"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-seashell wow animate__fadeIn">
-    <div class="container-fluid">
-      <div
-        class="row align-items-stretch justify-content-center extra-small-screen"
-      >
-        <div
-          class="col-12 col-xl-6 col-lg-7 col-md-8 page-title-extra-small text-center d-flex justify-content-center flex-column"
-        >
-          <h5
-            class="text-extra-dark-gray alt-font font-weight-500 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
-          >
-            MCICS provides consulting services in several areas of Canadian
-            immigration such as applications through the following streams:
-          </h5>
-        </div>
-      </div>
-      <div class="row">
-        <div
-          class="col-12 padding-8-half-rem-lr xl-padding-five-lr lg-padding-two-lr sm-padding-15px-lr"
-        >
-          <div
-            class="swiper-container overflow-hidden portfolio-classic position-relative swiper-pagination-bottom"
-          >
-            <div class="swiper-wrapper">
-              <!-- start slider item -->
-              <div
-                v-for="cat in consultingServices"
-                :key="cat.id"
-                class="swiper-slide overflow-hidden"
-              >
-                <div class="portfolio-box text-center">
-                  <router-link
-                    class="portfolio-caption padding-1-rem-all bg-white box-shadow-small box-shadow-extra-large-hover border-radius-6px text-center margin-15px-bottom"
-                    style="
-                      min-height: 180px;
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    :to="cat.link"
-                  >
-                    <h5
-                      class="alt-font text-extra-dark-gray font-weight-500 text-uppercase text-medium"
-                    >
-                      {{ cat.name }}
-                    </h5>
-                    <span
-                      class="d-block text-medium-gray text-small line-height-18px text-uppercase"
-                      >{{ cat.description }}</span
-                    >
-                  </router-link>
-                </div>
-              </div>
-              <!-- end slider item -->
-              <!-- end slider item -->
-            </div>
-            <!-- start slider navigation -->
-            <div
-              class="swiper-button-previous-nav swiper-button-prev slider-navigation-style-03 rounded-circle center-prev"
-              style="width: 44px"
-            >
-              <vue-feather type="arrow-left" size="16"></vue-feather>
-            </div>
-            <div
-              class="swiper-button-next-nav swiper-button-next slider-navigation-style-03 rounded-circle center-next"
-              style="width: 44px"
-            >
-              <vue-feather type="arrow-right" size="16"></vue-feather>
-            </div>
-            <!-- end slider navigation -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- start section -->
-  <!-- <section class="bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div
-          class="col-12 col-lg-7 col-sm-8 text-center margin-6-rem-bottom md-margin-3-rem-bottom wow animate__fadeIn"
-        >
-          <span class="d-block margin-15px-bottom">
-            <vue-feather type="users" stroke="#bf8c4c" size="40"></vue-feather>
-          </span>
-          <div
-            class="alt-font title-large text-gradient-tussock-greenish-slate font-weight-700 text-uppercase letter-spacing-minus-7px xl-letter-spacing-minus-4px"
-          >
-            Teamwork
-          </div>
-          <span
-            class="d-inline-block alt-font text-extra-dark-gray text-large text-uppercase font-weight-500 letter-spacing-1px margin-20px-bottom margin-10px-top"
-            >was more accepted 40 years ago</span
-          >
-        </div>
-      </div>
-    </div>
-  </section> -->
 </template>
 <style scoped>
-.hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../assets/images/main/flag.jpg) no-repeat;
-}
-
 .home-consulting {
   background-image: url(../assets/images/home-consulting-about-bg.jpg);
 }
