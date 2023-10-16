@@ -35,11 +35,11 @@
       <div class="row justify-content-center">
         <div class="col-md-12 text-center margin-six-bottom">
           <h6 class="alt-font text-extra-dark-gray font-weight-500">
-            Please fill out form fields applicable to you and submit it for
+            Please download and fill out the free assessment submit it for
             assessment
           </h6>
           <p>
-            We will get back to you per email with result of the assessment
+            We will get back to you per email with result of the assessment.
             Assessment may take up to 10 working days
           </p>
         </div>
@@ -47,7 +47,14 @@
       <div class="row justify-content-center">
         <div class="col-12 col-xl-10 col-lg-10 col-md-10">
           <form action="email-templates/contact-form.php" method="post">
-            <div>
+            <div class="col">
+                <input
+                  class="large-input margin-25px-bottom border-radius-0px required"
+                  type="file"
+                  name="assessment"
+                />
+              </div>
+            <!-- <div>
               <p class="alt-font text-extra-dark-gray font-weight-500">
                 1. Category interested for:
               </p>
@@ -605,8 +612,8 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-
+            </div> -->
+<!-- 
             <br />
             <p class="alt-font text-extra-dark-gray font-weight-500">
               4. Work Experience
@@ -903,9 +910,9 @@
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> -->
 
-            <br />
+            <!-- <br />
             <p class="alt-font text-extra-dark-gray font-weight-500">
               7. Spousal Information
             </p>
@@ -1344,8 +1351,8 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-
+            </div> -->
+<!-- 
             <br />
             <p class="alt-font text-extra-dark-gray font-weight-500">
               9. Work Experience of Spouse
@@ -1567,8 +1574,8 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-
+            </div> -->
+<!-- 
             <br />
             <p class="alt-font text-extra-dark-gray font-weight-500">
               11. Does your spouse have Close Relatives in Canada?
@@ -1635,7 +1642,7 @@
             <br />
             <p class="alt-font text-extra-dark-gray font-weight-500">
               12. Children details
-            </p>
+            </p> -->
 
             <button
               class="btn btn-small btn-fancy btn-gradient-fast-blue-purple mb-0 submit"
