@@ -8,7 +8,7 @@
           <h4
             class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px margin-4-rem-bottom w-80 lg-w-90 md-margin-3-rem-bottom xs-margin-4-rem-bottom xs-w-100"
           >
-            {{ content.title }}
+            {{ content.title.replace('(MCICS)', '') }}
             <span
               class="text-tussock text-decoration-line-bottom-thick font-weight-600"
               >(MCICS)</span
