@@ -7,13 +7,12 @@
                 class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column"
                 >
                 <h1 class="alt-font text-white opacity-6 margin-20px-bottom">
-                    About
+                    {{ content.subtitle }}
                 </h1>
                 <h3
                     class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom"
                 >
-                    <!-- Beware Of Fraud -->
-                    {{ 'put title here' }}
+                    {{ content.title }}
                 </h3>
                 </div>
                 <div class="down-section text-center">
@@ -29,3 +28,28 @@
         </div>
     </section>
 </template>
+<script setup>
+import { computed } from "vue";
+import { urlFor } from "../../helpers/sanity-helpers";
+const props = defineProps({
+  content: {
+    type: Object,
+    default: () => {},
+  },
+});
+
+const backgroundStyle = computed(
+  () =>
+    `url(${urlFor(
+      props.content.image
+    )})`
+);
+
+const url = backgroundStyle.value
+
+</script>
+<style scoped>
+.family-header {
+  background-image: v-bind(url)
+}
+</style>

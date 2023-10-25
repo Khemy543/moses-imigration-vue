@@ -1,6 +1,9 @@
 <template>
-    <section class="blog-right-side-bar">
+    <section class="blog-right-side-bar" :class="content.section_bg_color">
         <div class="container">
+            <h5 class="alt-font text-center text-extra-dark-gray font-weight-400" style="color: #bf8c4c">
+                {{ content.title }}
+            </h5>
             <div class="row justify-content-center">
                 <div class="col-12 blog-details-text last-paragraph-no-margin" style="font-size: 17px;">
                     <div v-for="body in content.body" :key="content._key">
@@ -33,4 +36,5 @@ const props = defineProps({
     default: () => {},
   },
 });
+
 </script>

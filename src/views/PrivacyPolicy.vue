@@ -1,13 +1,25 @@
 <script setup>
-import { sanity, builder } from "@/sanity.js";
-import { ref, onMounted } from "vue";
+import { sanity } from "@/sanity.js";
+import { ref, onMounted, computed } from "vue";
 
-const query = `*[_type == "about-us"]{
+import BodyText from '../components/About/BodyText.vue'
+import HeroSection from '../components/About/HeroSection.vue'
+
+const allComponents = {
+  HeroSection,
+  BodyText
+};
+
+const query = `*[_type == "privacy-policy"]{
+  myId,
+  subtitle,
+  component,
+  position_of_image,
+  description,
   body,
   title,
   image
 }`;
-
 
 const aboutData = ref([]);
 
@@ -15,98 +27,23 @@ const getPageData = () => {
   sanity
     .fetch(query)
     .then((data) => {
-      aboutData.value = data.find(item => item.title === 'Privacy Policy');
+      aboutData.value = data
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
-const urlFor = (source) => {
-  if (source) {
-    return builder.image(source);
-  }
-  return "";
-};
+const pageData = computed(() =>
+  aboutData.value.sort((a, b) => Number(a.myId) - Number(b.myId))
+);
 
 onMounted(() => {
   getPageData();
 });
 </script>
 <template>
-  <section class="parallax family-header" data-parallax-background-ratio="0.5">
-    <div class="opacity-extra-medium bg-extra-dark-gray"></div>
-    <div class="container">
-      <div class="row align-items-stretch justify-content-center small-screen">
-        <div
-          class="col-12 position-relative page-title-extra-small text-center d-flex align-items-center justify-content-center flex-column">
-          <h1 class="alt-font text-white opacity-6 margin-20px-bottom">
-            About
-          </h1>
-          <h3
-            class="text-white alt-font font-weight-500 w-55 md-w-65 sm-w-80 center-col xs-w-100 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">
-            <!-- Privacy Policy -->
-            {{ aboutData?.title }}
-          </h3>
-        </div>
-        <div class="down-section text-center">
-          <a href="#about" class="section-link">
-            <vue-feather type="arrow-down" stroke="#bf8c4c" size="24"></vue-feather>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="blog-right-side-bar">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom">
-          <div class="row">
-            <div class="col-12 blog-details-text last-paragraph-no-margin" style="font-size: 17px;">
-              <!-- <p>
-                Information that is submitted to MCICS is held in the strictest
-                confidence possible. Client information is only used to provide
-                an assessment by us to determine eligibility, and to make
-                informed decision when we provide you with best options you may
-                have in immigrating to Canada.
-              </p>
-              <p>
-             Individuals who do not wish to be
-                contacted by us, simply ensure to not submit our company a
-                message via the online contact forms, or contacting our firm via
-                email or phone. We, as a Canadian immigration consultant, assure
-                to you that we respect your privacy and are committed to
-                protecting it. We may collect personal information such as your
-                name, address, email address, telephone number, and other
-                contact information. We may also collect information related to
-                your immigration status, education, work experience, and other
-                personal details that are necessary for preparing and submitting
-                your immigration application. We collect this information in
-                order to provide immigration consulting services to you, to
-                communicate with you, and to comply with legal and regulatory
-                requirements. Rest assured that we do not sell, rent, or trade
-                your personal information to third parties. We take reasonable
-                measures to protect your personal information from unauthorized
-                access, use, or disclosure. We use physical, technical, and
-                administrative safeguards to protect your personal information.
-                We retain your personal information for as long as necessary to
-                provide immigration consulting services to you or as required by
-                law. When your personal information is no longer necessary for
-                these purposes, we securely destroy or de-identify your personal
-                information.
-              </p> -->
-
-              <p v-for="body in aboutData.body" :key="aboutData._key">{{ body?.children[0].text }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+     <template v-for="item in pageData" :key="item.myId">
+      <component :is="allComponents[item.component]" :content="item" />
+    </template>
 </template>
-<style scoped>
-.family-header {
-  background-image: url("../assets/images/main/privacy.jpg");
-}
-</style>
