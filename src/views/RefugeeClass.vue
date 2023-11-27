@@ -1,9 +1,9 @@
 <script setup>
-import { sanity} from "@/sanity.js";
+import { sanity } from "@/sanity.js";
 import { ref, onMounted, computed } from "vue";
 
-import BodyText from '../components/Pages/BodyText.vue'
-import HeroSection from '../components/Pages/HeroSection.vue'
+import BodyText from "../components/Pages/BodyText.vue";
+import HeroSection from "../components/Pages/HeroSection.vue";
 
 const allComponents = {
   HeroSection,
@@ -25,8 +25,8 @@ const getPageData = () => {
   sanity
     .fetch(query)
     .then((data) => {
-      console.log(data)
-      refugeeClass.value = data
+      console.log(data);
+      refugeeClass.value = data;
     })
     .catch((error) => {
       console.log(error);
@@ -34,7 +34,7 @@ const getPageData = () => {
 };
 
 const pageData = computed(() =>
-refugeeClass.value.sort((a, b) => Number(a.myId) - Number(b.myId))
+  refugeeClass.value.sort((a, b) => Number(a.myId) - Number(b.myId))
 );
 
 onMounted(() => {
@@ -42,7 +42,7 @@ onMounted(() => {
 });
 </script>
 <template>
-     <template v-for="item in pageData" :key="item.myId">
-      <component :is="allComponents[item.component]" :content="item" />
-    </template>
+  <template v-for="item in pageData" :key="item.myId">
+    <component :is="allComponents[item.component]" :content="item" />
+  </template>
 </template>

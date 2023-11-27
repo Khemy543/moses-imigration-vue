@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row align-items-center overlap-gap-section">
         <div class="col-12 col-lg-6 col-md-10 ps-lg-0">
-          <h5 v-if="content.title" class="alt-font text-dark-gray font-weight-500">
+          <h5 v-if="content.title" class="alt-font text-dark-gray font-weight-500" style="color: rgb(191, 140, 76);">
             {{ content.title }}
           </h5>
           <p v-for="body in content.body" :key="content._key">{{ body?.children[0].text }}</p>

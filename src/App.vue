@@ -36,4 +36,8 @@ import AppFooter from "./components/AppFooter.vue";
   <!-- end scroll to top -->
 </template>
 
-<style scoped></style>
+<style scoped>
+p {
+  margin: 0px !important;
+}
+</style>
