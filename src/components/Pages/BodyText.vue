@@ -9,6 +9,22 @@
         {{ content.title }}
       </h5>
       <SanityBlocks :blocks="content.body" />
+      <div class="container" v-if="content.noc">
+        <table>
+            <thead>
+            <tr>
+                <th v-text="content.noc.rows[0].cells[0]"></th>
+                <th v-text="content.noc.rows[0].cells[1]"></th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(nocList, index) in content.noc.rows" :id="nocList._key">
+                  <td v-if="index > 0" v-text="nocList.cells[0]"></td>
+                  <td v-if="index > 0" v-text="nocList.cells[1]"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
   </section>
 </template>

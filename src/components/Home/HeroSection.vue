@@ -39,7 +39,7 @@
           class="col-12 col-sm-9 align-items-center d-flex bg-tussock h-100 padding-3-rem-tb padding-5-rem-lr xs-padding-3-rem-lr"
         >
           <h5 class="alt-font text-white font-weight-300 m-0">
-            Book a free appointment for your dream of living in
+            {{ content.description.replace('Canada Permanently', '') }}
             <span class="font-weight-600">Canada Permanently</span>
           </h5>
         </div>
